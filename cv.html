@@ -1214,6 +1214,16 @@ body:not(.touch-device) .ptr-dot { display: block; }
 .lang-switch__arrow { font-size: 13px; transition: transform var(--tr-base); display: inline-block; }
 .lang-switch:hover .lang-switch__arrow { transform: translate(2px, -2px); }
 @media (max-width: 768px) { .top-bar__toggle { display: none !important; } .lang-switch { display: inline-flex; } }
+
+@media (max-width: 768px) {
+  #story .col-right {
+    display: none !important;
+  }
+
+  #story .two-col {
+    grid-template-columns: 1fr !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -1299,7 +1309,7 @@ body:not(.touch-device) .ptr-dot { display: block; }
 
       <section class="hero-center">
         <div class="hero-center-wrap">
-          <span class="hero-eyebrow" id="heroEye">SYSTEMS BUILDER · BRAND CREATOR · DIGITAL STRATEGIST</span>
+          <span class="hero-eyebrow" id="heroEye">DIGITAL STRATEGIST</span>
           <div style="display:block">
             <div class="mask-clip">
               <div class="pull-text" id="pullFirst">BELLÉR</div>

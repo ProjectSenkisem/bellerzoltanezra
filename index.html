@@ -1214,6 +1214,16 @@ body:not(.touch-device) .ptr-dot { display: block; }
 .lang-switch__arrow { font-size: 13px; transition: transform var(--tr-base); display: inline-block; }
 .lang-switch:hover .lang-switch__arrow { transform: translate(2px, -2px); }
 @media (max-width: 768px) { .top-bar__toggle { display: none !important; } .lang-switch { display: inline-flex; } }
+
+@media (max-width: 768px) {
+  #story .col-right {
+    display: none !important;
+  }
+
+  #story .two-col {
+    grid-template-columns: 1fr !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -1240,7 +1250,7 @@ body:not(.touch-device) .ptr-dot { display: block; }
   <svg width="16" height="20" viewBox="0 0 14 18" fill="none">
     <path d="M0.5 0.5L13 10.5H5.5L2.5 17.5L0.5 0.5Z" fill="#fff" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
   </svg>
-  <div class="ptr-badge">You</div>
+  <div class="ptr-badge">Te</div>
 </div>
 
 <header class="top-bar" id="topBar">
@@ -1299,7 +1309,7 @@ body:not(.touch-device) .ptr-dot { display: block; }
 
       <section class="hero-center">
         <div class="hero-center-wrap">
-          <span class="hero-eyebrow" id="heroEye">RENDSZERÉPÍTŐ · MÁRKAALKOTÓ · DIGITÁLIS STRATÉGA</span>
+          <span class="hero-eyebrow" id="heroEye">DIGITÁLIS STRATÉGA</span>
           <div style="display:block">
             <div class="mask-clip">
               <div class="pull-text" id="pullFirst">BELLÉR</div>
