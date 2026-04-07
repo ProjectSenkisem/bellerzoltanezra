@@ -904,6 +904,139 @@ body:not(.touch-device) .ptr-dot { display: block; }
   }
 }
 
+
+/* ============================================================
+   ABOUT EXP — MOBILE FIX
+   ============================================================ */
+@media (max-width: 768px) {
+  .about-exp {
+    padding: 4rem 1.25rem;
+    overflow: hidden;
+  }
+
+  .about-exp__heading {
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+  }
+
+  .about-exp__heading::before,
+  .about-exp__heading::after {
+    display: none;
+  }
+
+  /* Stack layout: dot bal, kártya jobb */
+  .about-exp__item {
+    grid-template-columns: 28px 1fr;
+    grid-template-rows: auto;
+    column-gap: 1rem;
+    padding-bottom: 3rem;
+  }
+
+  /* Minden item ugyanúgy néz ki - nincs flip */
+  .about-exp__item--flip .about-exp__year-col,
+  .about-exp__item--flip .about-exp__dot-col,
+  .about-exp__item--flip .about-exp__card-col {
+    order: unset;
+    text-align: start;
+  }
+
+  .about-exp__item--flip .about-exp__card {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+  }
+
+  /* Dot oszlop: 1. sor, 1. oszlop */
+  .about-exp__dot-col {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 0.35rem;
+  }
+
+  /* Kártya: 1. sor, 2. oszlop */
+  .about-exp__card-col {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: start;
+  }
+
+  /* Évszám elrejtése mobilon (helyet foglal, kilök) */
+  .about-exp__year-col {
+    display: none;
+  }
+
+  /* Kártya mobilra */
+  .about-exp__card {
+    max-width: 100%;
+    padding: 1.25rem 1.5rem;
+    touch-action: auto;
+    cursor: default;
+  }
+
+  /* Timeline vonal: bal oldal */
+  .about-exp__line {
+    left: 1.25rem;
+  }
+
+  /* Összekötő vízszintes vonal eltüntetése */
+  .about-exp__item::after {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-exp {
+    padding: 6rem 2rem;
+  }
+
+  .about-exp__item {
+    grid-template-columns: 1fr 44px 1fr;
+  }
+
+  .about-exp__card {
+    max-width: 100%;
+    padding: 1.5rem 1.75rem;
+  }
+
+  .about-exp__year {
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE BIO CARD — MOBILE FIX (hiányzott a magyar verzióból)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .about-bio__card { grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; min-height: auto; }
+  
+  .about-bio__card-img {
+    grid-row: auto;
+    padding: 0;
+    height: 260px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .about-bio__card-img img {
+    position: relative;
+    top: auto; left: auto; right: auto; bottom: auto;
+    width: auto;
+    height: 140%;
+    max-width: 140%;
+    object-fit: cover;
+    object-position: center 10%;
+  }
+  
+  .about-bio__card-body { padding: 0.75rem 1.25rem 0.5rem; }
+  .about-bio__card-footer { padding: 0.5rem 1.25rem 0.5rem; }
+}
+@media (max-width: 480px) {
+  .about-bio__card-img {
+    height: 220px;
+  }
+}
+
 /* ============================================================
    PREFERS REDUCED MOTION
    ============================================================ */
