@@ -2344,7 +2344,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 document.addEventListener('DOMContentLoaded', () => {
   const embedSec=document.getElementById('embed-section'); if(!embedSec)return;
   const stickyWrap=embedSec.querySelector('.services-sticky-wrap'); if(!stickyWrap)return;
-  const svcMap={film:'full stack',photo:'MARKETING',cgi:'AI',production:'BRAND'};
+  const svcMap={film:'full stack',photo:'TRADING',cgi:'AI',production:'BRAND'};
   embedSec.querySelectorAll('.services-content-card[data-service]').forEach(card=>{const svc=card.getAttribute('data-service');ScrollTrigger.create({trigger:card,start:'top center',end:'bottom center',onEnter:()=>stickyWrap.setAttribute('data-active-service',svcMap[svc]||svc.toUpperCase()),onEnterBack:()=>stickyWrap.setAttribute('data-active-service',svcMap[svc]||svc.toUpperCase()),});});
 });
 </script>
