@@ -34,7 +34,7 @@
     "@type": "Person",
     "name": "Bellér Zoltán Ezra",
     "url": "https://bellerzoltanezra.hu",
-    "email": "bellerzoltanezra@gmail.com",
+    "email": "hello@bellerzoltanezra.hu",
     "telephone": "+36307985995",
     "jobTitle": "Digitális Stratéga & Frontend Fejlesztő",
     "description": "Rendszerépítő, márkaalkotó és digitális stratéga Budapestről.",
@@ -178,14 +178,126 @@ body:not(.touch-device) .ptr-dot { display: block; }
 /* ============================================================
    BOOT SCREEN
    ============================================================ */
-.boot-screen { position: fixed; inset: 0; z-index: var(--z-boot); background: var(--clr-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.boot-screen__hub { position: relative; text-align: center; width: 90vw; max-width: 600px; }
-.boot-screen__line { position: absolute; width: 100%; left: 0; text-align: center; font-family: var(--ff-display); font-size: clamp(1.1rem, 3vw, 1.8rem); font-weight: 500; color: var(--clr-muted); white-space: normal; transition: none; }
-#bootLine2 { color: var(--clr-lime); }
-.boot-screen__foot { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; }
-.boot-screen__spin svg { animation: spin-anim 1s linear infinite; display: block; }
-.boot-screen__tag { font-family: var(--ff-mono); font-size: 11px; letter-spacing: .12em; color: var(--clr-muted); text-transform: uppercase; }
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-boot);
+  background: #050505;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
+.boot-screen__img-wrap {
+  position: relative;
+  width: min(1020px, 108vw);
+  height: auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.07);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.boot-screen__bg-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+.boot-screen__blur-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(14px) brightness(0.5);
+  -webkit-backdrop-filter: blur(14px) brightness(0.5);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 28%,
+    rgba(0,0,0,0.5) 40%,
+    black 52%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 28%,
+    rgba(0,0,0,0.5) 40%,
+    black 52%
+  );
+}
+
+.boot-screen__lock-block {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  text-align: center;
+  padding: 0 1.25rem;
+  z-index: 2;
+  width: 100%;
+}
+
+.boot-screen__lock-icon {
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid rgba(255,255,255,0.22);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.04), 0 0 24px rgba(0,0,0,0.5);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.boot-screen__img-wrap:hover .boot-screen__lock-icon {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.boot-screen__lock-label {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(0.85rem, 2.2vw, 1.1rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: rgba(255,255,255,0.92);
+  max-width: 22ch;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.9), 0 4px 20px rgba(0,0,0,0.7);
+}
+
+.boot-screen__foot {
+  position: absolute;
+  bottom: 36px;
+  right: 36px;
+  left: auto;
+  transform: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 3;
+}
+
+.boot-screen__spin svg {
+  animation: spin-anim 1s linear infinite;
+  display: block;
+}
+
+.boot-screen__tag {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  color: var(--clr-muted);
+  text-transform: uppercase;
+}
 /* ============================================================
    TOP BAR
    ============================================================ */
@@ -1175,6 +1287,59 @@ body:not(.touch-device) .ptr-dot { display: block; }
     justify-content: center;
   }
 }
+
+/* ============================================================
+   WORK TABS LOGIC
+   ============================================================ */
+.work-tabs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem 1rem;
+  background: #ebebeb;
+  position: relative;
+  z-index: 100;
+}
+
+.work-tab-btn {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid rgba(20, 20, 20, 0.2);
+  color: #141414;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.work-tab-btn:hover {
+  border-color: rgba(20, 20, 20, 0.5);
+}
+
+.work-tab-btn.active {
+  background: #141414;
+  color: #ebebeb;
+  border-color: #141414;
+}
+
+.work-tab-content {
+  display: none;
+}
+
+.work-tab-content.active {
+  display: block;
+  animation: fadeInTab 0.4s ease forwards;
+}
+
+@keyframes fadeInTab {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 </style>
 </head>
 <body>
@@ -1182,6 +1347,20 @@ body:not(.touch-device) .ptr-dot { display: block; }
 <canvas class="dust-layer" id="dustCanvas" aria-hidden="true"></canvas>
 
 <div class="boot-screen" id="bootScreen" aria-hidden="true">
+  <div class="boot-screen__img-wrap">
+    <img src="blur.png" alt="" class="boot-screen__bg-img" draggable="false">
+    <div class="boot-screen__blur-overlay"></div>
+    <div class="boot-screen__lock-block">
+      <div class="boot-screen__lock-icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <rect x="5" y="11" width="14" height="10" rx="2" stroke="rgba(255,255,255,0.9)" stroke-width="1.5"/>
+          <path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="16" r="1.5" fill="rgba(255,255,255,0.9)"/>
+        </svg>
+      </div>
+      <p class="boot-screen__lock-label">Kattints ide, hogy megtekintsd a teljes önéletrajzom.</p>
+    </div>
+  </div>
   <div class="boot-screen__foot">
     <div class="boot-screen__spin" aria-hidden="true">
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -1189,11 +1368,7 @@ body:not(.touch-device) .ptr-dot { display: block; }
         <path d="M9 2 A7 7 0 0 1 16 9" stroke="#E4FE9A" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
     </div>
-    <span class="boot-screen__tag">Betöltés</span>
-  </div>
-  <div class="boot-screen__hub">
-    <p class="boot-screen__line" id="bootLine1">Cigiszüneten vagyok...</p>
-    <p class="boot-screen__line" id="bootLine2" style="opacity:0;filter:blur(8px);">Csak viccelek, kezdhetjük?</p>
+    <span class="boot-screen__tag">potenciál betöltése...</span>
   </div>
 </div>
 
@@ -1210,12 +1385,11 @@ body:not(.touch-device) .ptr-dot { display: block; }
   </div>
   <div class="top-bar__time" id="liveClock">Budapest — 00:00:00 CET</div>
   <nav class="top-bar__links">
-    <!-- 
+
 <a href="/cv.html" class="lang-switch" id="langSwitch">
   <span class="lang-switch__txt">ENG</span>
   <span class="lang-switch__arrow">↗</span>
 </a> 
--->
   </nav>
 </header>
 
@@ -1724,16 +1898,30 @@ window.__renderHoloLight = function(ctx, w, h, ryy, rxx) {
     document.addEventListener('visibilitychange', () => { if (document.hidden) cancelAnimationFrame(raf); else { resize(); frame=0; raf=requestAnimationFrame(tick); } });
   })();
 
-  /* ---- BOOT ---- */
-  (function() {
-    const screen = document.getElementById('bootScreen');
-    const l1 = document.getElementById('bootLine1'); const l2 = document.getElementById('bootLine2');
-    setTimeout(() => {
-      gsap.to(l1, { opacity: 0, y: -28, filter: 'blur(12px)', duration: 0.7, ease: 'power2.in' });
-      setTimeout(() => { gsap.to(l2, { opacity: 1, filter: 'blur(0px)', y: 0, duration: 0.55, ease: 'power3.out' }); }, 300);
-      setTimeout(() => { gsap.to(screen, { opacity: 0, duration: 0.5, ease: 'power2.inOut', onComplete: () => { screen.style.display = 'none'; } }); }, 1200);
-    }, 1100);
-  })();
+/* ---- BOOT ---- */
+(function() {
+  const screen = document.getElementById('bootScreen');
+  const imgWrap = screen.querySelector('.boot-screen__img-wrap');
+
+  window.__bootDismissed = false;
+
+  imgWrap.addEventListener('click', dismiss);
+  imgWrap.addEventListener('touchend', dismiss, { passive: true });
+
+  function dismiss() {
+    if (window.__bootDismissed) return;
+    window.__bootDismissed = true;
+    gsap.to(screen, {
+      opacity: 0,
+      duration: 0.5,
+      ease: 'power2.inOut',
+      onComplete: () => {
+        screen.style.display = 'none';
+        startApp();
+      }
+    });
+  }
+})();
 
   /* ---- CLOCK ---- */
   (function() {
@@ -1804,17 +1992,25 @@ window.__renderHoloLight = function(ctx, w, h, ryy, rxx) {
   const altIdx = document.getElementById('altIdx');
   const altCopy = document.getElementById('altCopy');
 
-  const OPENING = [
-    { text: "Azoknak építek, akik ", em: false },
+const OPENING = [
+    { text: "Azoknak építek, akik \n", em: false },
     { text: "eredményt", em: true },
-    { text: " akarnak - nem csak ", em: false },
+    { text: " akarnak; \nnem csak ", em: false },
     { text: "látványt", em: true },
     { text: ".", em: false }
   ];
   const OPENING_LEN = OPENING.reduce((a, s) => a + s.text.length, 0);
+
   function renderOpening(chars, cursor) {
     let rem = chars, html = '';
-    for (const s of OPENING) { if (rem <= 0) break; const chunk = s.text.slice(0, rem); rem -= chunk.length; html += s.em ? `<em>${chunk}</em>` : chunk; }
+    for (const s of OPENING) { 
+      if (rem <= 0) break; 
+      const chunk = s.text.slice(0, rem); 
+      rem -= chunk.length; 
+      // \n karakterek cseréje <br> tagekre a biztonságos animációhoz
+      const escaped = chunk.replace(/\n/g, '<br>');
+      html += s.em ? `<em>${escaped}</em>` : escaped; 
+    }
     if (cursor) html += '<span class="blink-bar"></span>';
     altCopy.innerHTML = html;
   }
@@ -1938,15 +2134,31 @@ const NEW_TXT='...but oftentimes better\nthan a master of one".';
     setCollabTarget(window.innerWidth+200,-100); await pause(600); collabPtr.classList.remove('show');
   }
   function pause(ms) { return new Promise(r => setTimeout(r, ms)); }
-  setTimeout(() => {
-    if (!NO_MOTION) runSequence();
-    else { gsap.set('.pull-text',{y:'0%'}); gsap.set([heroEye,heroSub],{opacity:1}); gsap.set(mainCanvas,{opacity:1}); }
-  }, 1800);
+window.startApp = function() {
+  ScrollTrigger.refresh();
+  if (!NO_MOTION) {
+    setTimeout(() => runSequence(), 300);
+  } else {
+    gsap.set('.pull-text', { y: '0%' });
+    gsap.set([heroEye, heroSub], { opacity: 1 });
+    gsap.set(mainCanvas, { opacity: 1 });
+  }
+};
 
   /* ---- SCROLL PANELS ---- */
   const PANELS_DATA = [
-    { num:'02', segs:[ {t:'A precizitás ',em:false},{t:'és a játékosság találkozása',em:true},{t:'; fegyelmezett struktúra, merész kreatív vízióval feltöltve.',em:false} ] },
-{ num:'03', segs:[ {t:"Nem csupán kódot írok.",em:false},{t:' Élményt teremtek.',em:true},{t:'\nÜdvözöllek a világomban.',em:false} ] }
+    { num:'02', segs:[ 
+        {t:'A precizitás ',em:false},
+        {t:'és a játékosság találkozása',em:false},
+        {t:'; fegyelmezett struktúra, ',em:false},
+        {t:'merész kreatív vízióval',em:true},
+        {t:' feltöltve.',em:false} 
+    ] },
+    { num:'03', segs:[ 
+        {t:"Nem csupán kódot írok.",em:false},
+        {t:'\nÉlményt teremtek.',em:true},
+        {t:'\nÜdvözöllek a világomban.',em:false} 
+    ] }
   ];
   PANELS_DATA.forEach(p => { p.len=p.segs.reduce((a,s)=>a+s.t.length,0); });
   const panelChars=[0,0];
@@ -2178,11 +2390,11 @@ function renderContactLight() {
     const btn = document.getElementById('emailCopyBtn'); const lbl = document.getElementById('emailBtnTxt'); const arrow = document.getElementById('emailArrow');
     if (!btn) return;
     btn.addEventListener('click', () => {
-      navigator.clipboard.writeText('bellerzoltanezra@gmail.com').then(() => {
+      navigator.clipboard.writeText('hello@bellerzoltanezra.hu').then(() => {
         lbl.textContent = 'Kimásolva!'; btn.style.borderColor='rgba(228,254,154,.5)'; btn.style.color='#E4FE9A';
         if (arrow) arrow.textContent = '✓';
-        setTimeout(() => { lbl.textContent='bellerzoltanezra@gmail.com'; btn.style.borderColor=''; btn.style.color=''; if (arrow) arrow.textContent='Másolás ↗'; }, 2000);
-      }).catch(() => { lbl.textContent='bellerzoltanezra@gmail.com'; setTimeout(()=>{ lbl.textContent='bellerzoltanezra@gmail.com'; },3000); });
+        setTimeout(() => { lbl.textContent='hello@bellerzoltanezra.hu'; btn.style.borderColor=''; btn.style.color=''; if (arrow) arrow.textContent='Másolás ↗'; }, 2000);
+      }).catch(() => { lbl.textContent='hello@bellerzoltanezra.hu'; setTimeout(()=>{ lbl.textContent='hello@bellerzoltanezra.hu'; },3000); });
     });
   })();
 
@@ -2255,10 +2467,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
-  gsap.registerPlugin(ScrollTrigger);
-  const embedSec=document.getElementById('embed-section'); if(!embedSec)return;
-  const workWrap=embedSec.querySelector('.work-wrapper'), bgWrap=embedSec.querySelector('.work-bg-wrap'); if(!workWrap||!bgWrap)return;
-  gsap.fromTo(bgWrap,{opacity:0},{opacity:1,duration:0.4,ease:'none',scrollTrigger:{trigger:workWrap,start:'top top',end:'bottom bottom',toggleActions:'play reverse play reverse'}});
+  gsap.registerPlugin(ScrollTrigger); 
+  const embedSec=document.getElementById('embed-section'); 
+  if(!embedSec)return;
+
+  // Megkeressük az összes .work-wrapper-t (az Opció 1-et és az Opció 2-t is)
+  const workWraps = embedSec.querySelectorAll('.work-wrapper');
+  
+  workWraps.forEach(workWrap => {
+    const bgWrap = workWrap.querySelector('.work-bg-wrap'); 
+    if(!bgWrap) return; // Ha valamiért nincs benne a háttér, ugrunk
+    
+    // Rátesszük a ScrollTrigger animációt az aktuális tabra
+    gsap.fromTo(bgWrap, {opacity:0}, {
+      opacity:1, 
+      duration:0.4, 
+      ease:'none', 
+      scrollTrigger: {
+        trigger: workWrap, 
+        start: 'top top', 
+        end: 'bottom bottom', 
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+  });
 });
 </script>
 
@@ -2351,6 +2583,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script>
 CustomEase && CustomEase.create("custom","M0,0 C0.29,0 0.428,0.015 0.5,0.1 0.569,0.183 0.613,0.337 0.613,0.481 0.613,0.578 0.637,0.806 0.7,0.9 0.775,1.011 1,0.945 1,1 ");
+</script>
+
+<script>
+  function switchWorkTab(tabId) {
+    // 1. Gombok "active" classának frissítése
+    document.getElementById('btn-opt-1').classList.toggle('active', tabId === 1);
+    document.getElementById('btn-opt-2').classList.toggle('active', tabId === 2);
+
+    // 2. Tartalmi konténerek megjelenítése/elrejtése
+    document.getElementById('work-opt-1').classList.toggle('active', tabId === 1);
+    document.getElementById('work-opt-2').classList.toggle('active', tabId === 2);
+
+    // 3. Nagyon fontos: GSAP ScrollTrigger frissítése!
+    // Mivel a DOM magassága és láthatósága változik, szólnunk kell a GSAP-nek, 
+    // hogy számolja újra az elemek magasságát és a görgetési pontokat.
+    if (typeof ScrollTrigger !== 'undefined') {
+      // Egy pici késleltetés kell, hogy a böngésző biztosan újra-renderelje a display block/none-t
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 50);
+    }
+  }
 </script>
 
 </body>
