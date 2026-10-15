@@ -1,34 +1,37 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- SEO -->
-  <title>Bellér Zoltán Ezra | Full-Stack, FinTech & AI Fejlesztő – Budapest</title>
-  <meta name="description" content="Bellér Zoltán Ezra – Digitális stratéga, Full-Stack fejlesztő, marketing szakember és AI megoldások építője Budapestről. Weboldalak, márkák, automatizáció."/>
-  <meta name="keywords" content="Bellér Zoltán Ezra, Full-Stack fejlesztő Budapest, digitális stratéga, marketing, AI fejlesztő, React, Node.js, webfejlesztés Hungary"/>
+  <!-- SEO (alapértelmezett: angol; a nyelvváltó JS frissíti) -->
+  <title>Bellér Zoltán Ezra | Frontend, Marketing & AI Developer – Budapest</title>
+  <meta name="description" content="Bellér Zoltán Ezra – Digital strategist, frontend developer, marketing specialist and AI solutions builder from Budapest. Websites, brands, automation."/>
+  <meta name="keywords" content="Bellér Zoltán Ezra, frontend developer Budapest, digital strategist, marketing, AI developer, React, Node.js, Senkisem, web development Hungary"/>
   <meta name="author" content="Bellér Zoltán Ezra"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://bellerzoltanezra.hu/"/>
+  <link rel="alternate" hreflang="en" href="https://bellerzoltanezra.hu/?lang=en"/>
+  <link rel="alternate" hreflang="hu" href="https://bellerzoltanezra.hu/?lang=hu"/>
+  <link rel="alternate" hreflang="x-default" href="https://bellerzoltanezra.hu/"/>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://bellerzoltanezra.hu/"/>
-  <meta property="og:title" content="Bellér Zoltán Ezra | Fejlesztő, Marketing & AI – Budapest"/>
-  <meta property="og:description" content="Rendszerépítő, digitális stratéga. Frontend, Backend, AI & Automatizáció."/>
+  <meta property="og:title" content="Bellér Zoltán Ezra | Developer, Marketing & AI – Budapest"/>
+  <meta property="og:description" content="Systems builder, brand creator and digital strategist. Frontend, Backend, AI & Automation."/>
   <meta property="og:image" content="https://bellerzoltanezra.hu/prof.png"/>
-  <meta property="og:locale" content="hu_HU"/>
-  <meta property="og:site_name" content="Bellér Zoltán Ezra Portfólió"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="Bellér Zoltán Ezra Portfolio"/>
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Bellér Zoltán Ezra | Fejlesztő, Marketing & AI"/>
-  <meta name="twitter:description" content="Rendszerépítő, márkaalkotó és digitális stratéga Budapestről."/>
+  <meta name="twitter:title" content="Bellér Zoltán Ezra | Developer, Marketing & AI"/>
+  <meta name="twitter:description" content="Systems builder, brand creator and digital strategist from Budapest."/>
   <meta name="twitter:image" content="https://bellerzoltanezra.hu/prof.png"/>
 
   <!-- Structured Data -->
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="ldJson">
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -36,8 +39,8 @@
     "url": "https://bellerzoltanezra.hu",
     "email": "hello@bellerzoltanezra.hu",
     "telephone": "+36307985995",
-    "jobTitle": "Digitális Stratéga & Frontend Fejlesztő",
-    "description": "Rendszerépítő, márkaalkotó és digitális stratéga Budapestről.",
+    "jobTitle": "Digital Strategist & Frontend Developer",
+    "description": "Systems builder, brand creator and digital strategist from Budapest.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Budapest",
@@ -151,18 +154,13 @@ section { width: 100%; position: relative; }
 /* ============================================================
    KEYFRAMES
    ============================================================ */
-@keyframes spin-anim { to { transform: rotate(360deg); } }
 @keyframes blink-tick { 50% { opacity: 0; } }
 @keyframes blink-loop { 50% { opacity: 0; } }
 @keyframes blink-step { 50% { opacity: 0; } }
-@keyframes statusPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
 @keyframes scrollPulse--about { 0%, 100% { opacity: 0.5; transform: translateY(0); } 50% { opacity: 0.2; transform: translateY(8px); } }
 @keyframes aboutAsteriskSpin { to { transform: rotate(360deg); } }
 @keyframes aboutOrbitPulse { 0%, 100% { opacity: 0.2; transform: scale(1); } 50% { opacity: 0.35; transform: scale(1.08); } }
 @keyframes aboutOrbitDot { to { transform: translateX(-50%) rotate(360deg); transform-origin: 0 22px; } }
-@keyframes nav-bracket-in { from { opacity: 0; transform: translateY(-6px); } }
-@keyframes holoShimmer { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-@keyframes pageEnter { from { filter: blur(6px); opacity: 0; transform: scale(0.985); } to { filter: blur(0); opacity: 1; transform: scale(1); } }
 
 /* ============================================================
    DUST & CURSOR
@@ -181,13 +179,36 @@ body:not(.touch-device) .ptr-dot { display: block; }
 .top-bar__brand { font-family: var(--ff-display); font-size: 15px; font-weight: 700; }
 .top-bar__brand a { cursor: none; }
 .top-bar__time { font-family: var(--ff-mono); font-size: 11px; color: var(--clr-muted); letter-spacing: .04em; }
-.top-bar__links { display: flex; gap: 28px; }
-.top-bar__links a { font-family: var(--ff-display); font-size: 14px; font-weight: 500; color: var(--clr-muted); text-transform: uppercase; letter-spacing: .04em; cursor: none; transition: color var(--tr-base); }
-.top-bar__links a:hover { color: var(--clr-fg); }
-.lang-switch { display: inline-flex; align-items: center; gap: 6px; font-family: var(--ff-mono); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--clr-muted); border: 1px solid rgba(255,255,255,.12); padding: 6px 12px; transition: color var(--tr-base), border-color var(--tr-base), background var(--tr-base); cursor: none; text-decoration: none; }
-.lang-switch:hover { color: var(--clr-fg); border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.04); }
-.lang-switch__arrow { font-size: 13px; transition: transform var(--tr-base); display: inline-block; }
-.lang-switch:hover .lang-switch__arrow { transform: translate(2px, -2px); }
+.top-bar__links { display: flex; gap: 28px; min-width: 74px; }
+@media (max-width: 768px) { .top-bar__links { min-width: 62px; } }
+
+/* ============================================================
+   LANGUAGE SWITCHER (flag buttons)
+   A top-bar mix-blend-mode miatt külön elem, hogy a zászlók színe ne invertálódjon.
+   ============================================================ */
+.lang-switcher { position: fixed; top: 18px; right: var(--gap); z-index: calc(var(--z-nav) + 1); display: flex; align-items: center; gap: 6px; }
+.lang-flag {
+  appearance: none; -webkit-appearance: none;
+  position: relative; display: block;
+  width: 34px; height: 34px; padding: 0; margin: 0;
+  border: 2px solid transparent; border-radius: 50%;
+  background: transparent; overflow: hidden;
+  opacity: .5;
+  box-shadow: 0 2px 10px rgba(0,0,0,.35);
+  transition: opacity .2s ease, border-color .2s ease, transform .2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.lang-flag svg { display: block; width: 100%; height: 100%; border-radius: 50%; pointer-events: none; }
+.lang-flag:hover { opacity: .9; }
+.lang-flag[aria-pressed="true"] { opacity: 1; border-color: #fff; }
+.lang-flag:focus-visible { outline: 2px solid #fff; outline-offset: 2px; opacity: .9; }
+.lang-flag[aria-pressed="true"]:focus-visible { opacity: 1; }
+body:not(.touch-device) .lang-flag { cursor: none; }
+body.touch-device .lang-flag { cursor: pointer; }
+@media (max-width: 768px) {
+  .lang-switcher { top: 21px; gap: 4px; }
+  .lang-flag { width: 28px; height: 28px; }
+}
 
 /* ============================================================
    HERO / STAGE
@@ -263,17 +284,10 @@ body:not(.touch-device) .ptr-dot { display: block; }
 .ann-toast__prop { color: var(--clr-muted); } .ann-toast__arrow { color: var(--clr-violet); } .ann-toast__val { color: var(--clr-fg); font-weight: 500; }
 
 /* ============================================================
-   CAMERA WRAPPERS
-   ============================================================ */
-.cam-outer { position: relative; height: 180vh; }
-.cam-stick { position: sticky; top: 0; height: 100vh; overflow: hidden; perspective: 1500px; }
-.cam-board { position: absolute; inset: 0; width: 100%; height: 100vh; transform-style: preserve-3d; transform-origin: center center; will-change: transform, opacity, border-radius, box-shadow; backface-visibility: hidden; overflow: hidden; }
-
-/* ============================================================
+   ABOUT SECTION
    ============================================================ */
 .about-section { width: 100%; background: var(--bg); }
 
-/* Bio */
 .about-bio {
   padding: calc(80px + 4rem) 2rem 2rem;
   display: flex;
@@ -317,7 +331,6 @@ body:not(.touch-device) .ptr-dot { display: block; }
 .about-bio__scroll-hint span { font-family: var(--ff-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--text); }
 .about-bio__scroll-hint::after { content: ''; width: 1px; height: 48px; background: linear-gradient(to bottom, rgba(232,228,222,0.5), transparent); }
 
-/* Bio Card */
 .about-bio__card {
   width: clamp(420px, 82vw, 1100px);
   max-width: 94vw;
@@ -475,13 +488,7 @@ body:not(.touch-device) .ptr-dot { display: block; }
 /* ============================================================
    CONTACT SECTION
    ============================================================ */
-/* ============================================================
-   CONTACT SECTION — MATCHED TO ABOUT BIO CARD
-   ============================================================ */
-.contact-section {
-  width: 100%;
-  background: var(--bg);
-}
+.contact-section { width: 100%; background: var(--bg); }
 
 .contact-hero {
   padding: calc(-225px + 3rem) 2rem 3rem;
@@ -493,64 +500,20 @@ body:not(.touch-device) .ptr-dot { display: block; }
   perspective: 1200px;
   position: relative;
   background: var(--bg);
-    overflow: hidden;
-
+  overflow: hidden;
 }
 
-.contact-deco {
-  position: absolute;
-  inset: calc(80px + 4rem) 2rem 2rem 2rem;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 1.4s var(--ease);
-}
+.contact-deco { position: absolute; inset: calc(80px + 4rem) 2rem 2rem 2rem; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 1.4s var(--ease); }
 .contact-deco.vis { opacity: 1; transition-delay: 0.3s; }
-
-.contact-deco__corner {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  opacity: 0.35;
-}
+.contact-deco__corner { position: absolute; width: 32px; height: 32px; opacity: 0.35; }
 .contact-deco__corner--tl { top: 0; left: 0; border-top: 1px solid var(--text-muted); border-left: 1px solid var(--text-muted); }
 .contact-deco__corner--tr { top: 0; right: 0; border-top: 1px solid var(--text-muted); border-right: 1px solid var(--text-muted); }
 .contact-deco__corner--bl { bottom: 0; left: 0; border-bottom: 1px solid var(--text-muted); border-left: 1px solid var(--text-muted); }
 .contact-deco__corner--br { bottom: 0; right: 0; border-bottom: 1px solid var(--text-muted); border-right: 1px solid var(--text-muted); }
+.contact-deco__label { position: absolute; left: 8px; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: left center; font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); opacity: 0.3; white-space: nowrap; }
+.contact-deco__annotation { position: absolute; bottom: 8px; right: 32px; font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); opacity: 0.3; }
 
-.contact-deco__label {
-  position: absolute;
-  left: 8px;
-  top: 50%;
-  transform: translateY(-50%) rotate(-90deg);
-  transform-origin: left center;
-  font-family: var(--ff-mono);
-  font-size: 10px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  opacity: 0.3;
-  white-space: nowrap;
-}
-
-.contact-deco__annotation {
-  position: absolute;
-  bottom: 8px;
-  right: 32px;
-  font-family: var(--ff-mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  opacity: 0.3;
-}
-
-.contact-hero__inner {
-  width: clamp(420px, 82vw, 1100px);
-  max-width: 94vw;
-  z-index: 1;
-  position: relative;
-}
+.contact-hero__inner { width: clamp(420px, 82vw, 1100px); max-width: 94vw; z-index: 1; position: relative; display: flex; flex-direction: column; align-items: center; }
 
 .contact-card {
   width: 100%;
@@ -571,461 +534,127 @@ body:not(.touch-device) .ptr-dot { display: block; }
   z-index: 10;
   isolation: isolate;
 }
+.contact-card.is-visible { opacity: 1; transform: none; }
+.contact-card__light { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: var(--radius-lg); pointer-events: none !important; z-index: 0; mix-blend-mode: screen; opacity: 0.45; transition: opacity 0.3s ease; }
+.contact-card:hover .contact-card__light { opacity: 0.65; }
 
-.contact-card.is-visible {
-  opacity: 1;
-  transform: none;
-}
+.contact-card__body { padding: 2rem 2.25rem 1.25rem; position: relative; z-index: 20; display: flex; flex-direction: column; align-items: center; text-align: center; }
 
-.contact-card__light {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--radius-lg);
-  pointer-events: none !important;
-  z-index: 0;
-  mix-blend-mode: screen;
-  opacity: 0.45;
-  transition: opacity 0.3s ease;
-}
-
-.contact-card:hover .contact-card__light {
-  opacity: 0.65;
-}
-
-.contact-card__side {
-  grid-row: 1 / 3;
-  padding: 16px;
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-card__side-inner {
-  width: 100%;
-  height: 100%;
-  min-height: 100%;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background:
-    radial-gradient(circle at top left, rgba(228,254,154,0.08), transparent 35%),
-    radial-gradient(circle at bottom right, rgba(191,150,201,0.08), transparent 35%),
-    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1.5rem;
-}
-
-.contact-card__eyebrow {
-  font-family: var(--ff-mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.contact-card__title {
-  font-family: var(--ff-syne);
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  color: var(--text);
-  max-width: 10ch;
-}
-
-.contact-card__meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-family: var(--ff-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.contact-card__body {
-  padding: 2rem 2.25rem 1.25rem;
-  position: relative;
-  z-index: 20;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.contact-card__links {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-  width: 100%;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 30;
-}
+.contact-card__links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; width: 100%; margin-bottom: 1rem; position: relative; z-index: 30; }
 
 .contact-card__link {
-  appearance: none;
-  -webkit-appearance: none;
+  appearance: none; -webkit-appearance: none;
   border: 1px solid var(--border);
   background: rgba(255,255,255,0.02);
   color: var(--text-muted);
-  text-decoration: none;
-  outline: none;
-
-  min-height: 54px;
-  width: 100%;
-  padding: 0.9rem 1rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem;
-
+  text-decoration: none; outline: none;
+  min-height: 54px; width: 100%; padding: 0.9rem 1rem;
+  display: flex; align-items: center; justify-content: center; gap: 0.7rem;
   border-radius: var(--radius-pill);
-  font-family: var(--ff-mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  line-height: 1;
-  white-space: nowrap;
-
-  position: relative;
-  z-index: 31;
-  pointer-events: auto;
-
-  cursor: pointer;
-  transition:
-    border-color 0.2s ease,
-    background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.08em; line-height: 1; white-space: nowrap;
+  position: relative; z-index: 31; pointer-events: auto; cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
+.contact-card__link:hover, .contact-card__link:focus-visible { border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.06); color: var(--text); transform: translateY(-1px); box-shadow: 0 10px 25px rgba(0,0,0,0.18); }
+.contact-card__link:active { transform: translateY(0); }
+.contact-card__link svg, .contact-card__link span { pointer-events: none; }
+.contact-card__link svg { flex-shrink: 0; opacity: 0.9; }
 
-.contact-card__link:hover,
-.contact-card__link:focus-visible {
-  border-color: rgba(255,255,255,0.22);
-  background: rgba(255,255,255,0.06);
-  color: var(--text);
-  transform: translateY(-1px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-}
+.contact-card__intro { font-family: var(--ff-base); font-size: 0.95rem; line-height: 1.75; color: var(--text-muted-dark); margin-bottom: 1.25rem; max-width: 480px; }
+.contact-card__intro p + p { margin-top: 0.9rem; }
 
-.contact-card__link:active {
-  transform: translateY(0);
-}
+.contact-card__link { display: inline-flex; align-items: center; gap: 0.75rem; font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--text-muted); padding: 0.7rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-pill); transition: border-color 0.3s, color 0.3s, background 0.3s, transform 0.3s; background: transparent; cursor: pointer; }
+.contact-card__link:hover { border-color: rgba(255,255,255,0.15); color: var(--text); background: rgba(255,255,255,0.04); transform: translateY(-2px); }
+.contact-card__link svg { flex-shrink: 0; opacity: 0.8; }
 
-.contact-card__link svg,
-.contact-card__link span {
-  pointer-events: none;
-}
-
-.contact-card__link svg {
-  flex-shrink: 0;
-  opacity: 0.9;
-}
-
-.contact-card__title-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1.25rem;
-}
-
-.contact-card__title-row h2 {
-  font-family: var(--ff-syne);
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  color: var(--text);
-}
-
-.contact-card__type {
-  font-family: var(--ff-mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  white-space: nowrap;
-  padding: 0.3rem 0.85rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-}
-
-.contact-card__intro {
-  font-family: var(--ff-base);
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: var(--text-muted-dark);
-  margin-bottom: 1.25rem;
-}
-
-.contact-card__intro p + p {
-  margin-top: 0.9rem;
-}
-
-
-
-.contact-card__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--ff-mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  padding: 0.7rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  transition: border-color 0.3s, color 0.3s, background 0.3s, transform 0.3s;
-  background: transparent;
-  cursor: pointer;
-}
-
-.contact-card__link:hover {
-  border-color: rgba(255,255,255,0.15);
-  color: var(--text);
-  background: rgba(255,255,255,0.04);
-  transform: translateY(-2px);
-}
-
-.contact-card__link svg {
-  flex-shrink: 0;
-  opacity: 0.8;
-}
-
-.contact-card__footer {
+/* ---- "Önéletrajz megtekintése" CTA ---- */
+.contact-card__cta {
   grid-column: 1 / -1;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.75rem 2.25rem 1rem;
-  font-family: var(--ff-mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  opacity: 0.5;
-  border-top: 1px solid var(--border);
+  position: relative; z-index: 31;
+  display: flex; align-items: center; gap: 1rem;
+  width: 100%; padding: 0.95rem 1.35rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(228,254,154,0.32);
+  background: linear-gradient(90deg, rgba(228,254,154,0.09), rgba(191,150,201,0.07));
+  color: var(--text); text-decoration: none;
+  overflow: hidden; cursor: pointer;
+  transition: border-color .3s ease, background .3s ease, color .3s ease, transform .3s ease, box-shadow .3s ease;
 }
+.contact-card__cta::before { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.16) 50%, transparent 70%); transform: translateX(-120%); transition: transform .9s var(--ease); pointer-events: none; }
+.contact-card__cta:hover, .contact-card__cta:focus-visible { background: var(--clr-lime); border-color: var(--clr-lime); color: #050505; transform: translateY(-2px); box-shadow: 0 14px 34px rgba(228,254,154,0.18); }
+.contact-card__cta:focus-visible { outline: 2px solid var(--clr-lime); outline-offset: 3px; }
+.contact-card__cta:hover::before { transform: translateX(120%); }
+.contact-card__cta-icon { position: absolute; left: 1.35rem; top: 50%; display: flex; flex: 0 0 auto; color: var(--clr-lime); transform: translateY(-50%); transition: color .3s ease; pointer-events: none; }
+.contact-card__cta:hover .contact-card__cta-icon, .contact-card__cta:focus-visible .contact-card__cta-icon { color: #050505; }
+.contact-card__cta-text { display: flex; flex-direction: column; align-items: center; gap: .3rem; flex: 1; min-width: 0; text-align: center; pointer-events: none; }
+.contact-card__cta-tag { font-family: var(--ff-mono); font-size: 9px; letter-spacing: .24em; text-transform: uppercase; opacity: .6; }
+.contact-card__cta-label { font-family: var(--ff-display); font-size: clamp(15px, 1.5vw, 18px); font-weight: 600; letter-spacing: -.01em; line-height: 1.1; }
+.contact-card__cta-label { white-space: nowrap; }
+
+.contact-card__footer { grid-column: 1 / -1; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; padding: 0.75rem 2.25rem 1rem; font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; border-top: 1px solid var(--border); width: 100%; }
+
+.contact-hero__heading { font-family: var(--ff-syne); font-size: clamp(1.8rem, 8vw, 6rem); font-weight: 800; letter-spacing: -0.04em; text-align: center; margin-bottom: 2.5rem; color: var(--text); }
+@media (max-width: 480px) { .contact-hero__heading { font-size: 2rem; } }
+.contact-hero__rule-row { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; width: 100%; }
+.contact-hero__rule-line { flex: 1; height: 1px; background: var(--border); max-width: 120px; }
+.contact-hero__rule-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--text-muted); opacity: 0.4; }
 
 /* ============================================================
    RESPONSIVE: CONTACT
    ============================================================ */
 @media (max-width: 1024px) {
-  .contact-hero {
-    padding-top: calc(80px + 1rem) !important;
-    min-height: auto;
-    justify-content: flex-start;
-  }
-
-  .contact-deco {
-    inset: calc(80px + 1rem) 1rem 1rem 1rem;
-  }
-
-  .contact-deco__corner {
-    width: 20px;
-    height: 20px;
-  }
-
-  .contact-hero__inner {
-    width: min(92vw, 420px);
-  }
-
-  .contact-card {
-    min-height: auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-  }
-
-  .contact-card__side {
-    grid-row: auto;
-    padding: 10px 10px 0;
-  }
-
-  .contact-card__side-inner {
-    min-height: 220px;
-  }
-
-  .contact-card__body {
-    padding: 0.75rem 1.25rem 0.5rem;
-  }
-
-  .contact-card__title-row {
-    margin-bottom: 0.6rem;
-    padding-bottom: 0.6rem;
-  }
-
-  .contact-card__title-row h2 {
-    font-size: 1.4rem;
-  }
-
-  .contact-card__footer {
-    padding: 0.5rem 1.25rem 0.5rem;
-    flex-direction: column;
-    gap: 0.35rem;
-    align-items: flex-start;
-  }
+  .contact-hero { padding-top: calc(80px + 1rem) !important; min-height: auto; justify-content: flex-start; }
+  .contact-deco { inset: calc(80px + 1rem) 1rem 1rem 1rem; }
+  .contact-deco__corner { width: 20px; height: 20px; }
+  .contact-hero__inner { width: min(92vw, 420px); }
+  .contact-card { min-height: auto; grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; }
+  .contact-card__body { padding: 0.75rem 1.25rem 0.5rem; }
+  .contact-card__footer { padding: 0.5rem 1.25rem 0.5rem; flex-direction: column; gap: 0.35rem; align-items: flex-start; }
 }
-
 @media (max-width: 768px) {
-  .contact-card__side-inner {
-    min-height: 180px;
-    padding: 1.2rem;
-  }
-
-  .contact-card__title {
-    font-size: clamp(1.6rem, 8vw, 2.2rem);
-  }
-
-  .contact-card__links {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-card__link {
-    width: 100%;
-    justify-content: flex-start;
-    white-space: normal;
-  }
+  .contact-card__links { grid-template-columns: 1fr; }
+  .contact-card__link { width: 100%; justify-content: flex-start; white-space: normal; }
 }
-
+@media (max-width: 640px) {
+  .contact-card__links { flex-direction: column; align-items: stretch; }
+  .contact-card__link { width: 100%; justify-content: flex-start; }
+}
 
 /* ============================================================
    ABOUT EXP — MOBILE FIX
    ============================================================ */
 @media (max-width: 768px) {
-  .about-exp {
-    padding: 4rem 1.25rem;
-    overflow: hidden;
-  }
-
-  .about-exp__heading {
-    font-size: 1.1rem;
-    margin-bottom: 4rem;
-  }
-
-  .about-exp__heading::before,
-  .about-exp__heading::after {
-    display: none;
-  }
-
-  /* Stack layout: dot bal, kártya jobb */
-  .about-exp__item {
-    grid-template-columns: 28px 1fr;
-    grid-template-rows: auto;
-    column-gap: 1rem;
-    padding-bottom: 3rem;
-  }
-
-  /* Minden item ugyanúgy néz ki - nincs flip */
-  .about-exp__item--flip .about-exp__year-col,
-  .about-exp__item--flip .about-exp__dot-col,
-  .about-exp__item--flip .about-exp__card-col {
-    order: unset;
-    text-align: start;
-  }
-
-  .about-exp__item--flip .about-exp__card {
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-  }
-
-  /* Dot oszlop: 1. sor, 1. oszlop */
-  .about-exp__dot-col {
-    grid-column: 1;
-    grid-row: 1;
-    padding-top: 0.35rem;
-  }
-
-  /* Kártya: 1. sor, 2. oszlop */
-  .about-exp__card-col {
-    grid-column: 2;
-    grid-row: 1;
-    text-align: start;
-  }
-
-  /* Évszám elrejtése mobilon (helyet foglal, kilök) */
-  .about-exp__year-col {
-    display: none;
-  }
-
-  /* Kártya mobilra */
-  .about-exp__card {
-    max-width: 100%;
-    padding: 1.25rem 1.5rem;
-    touch-action: auto;
-    cursor: default;
-  }
-
-  /* Timeline vonal: bal oldal */
-  .about-exp__line {
-    left: 1.25rem;
-  }
-
-  /* Összekötő vízszintes vonal eltüntetése */
-  .about-exp__item::after {
-    display: none;
-  }
+  .about-exp { padding: 4rem 1.25rem; overflow: hidden; }
+  .about-exp__heading { font-size: 1.1rem; margin-bottom: 4rem; }
+  .about-exp__heading::before, .about-exp__heading::after { display: none; }
+  .about-exp__item { grid-template-columns: 28px 1fr; grid-template-rows: auto; column-gap: 1rem; padding-bottom: 3rem; }
+  .about-exp__item--flip .about-exp__year-col, .about-exp__item--flip .about-exp__dot-col, .about-exp__item--flip .about-exp__card-col { order: unset; text-align: start; }
+  .about-exp__item--flip .about-exp__card { margin-inline-start: 0; margin-inline-end: 0; }
+  .about-exp__dot-col { grid-column: 1; grid-row: 1; padding-top: 0.35rem; }
+  .about-exp__card-col { grid-column: 2; grid-row: 1; text-align: start; }
+  .about-exp__year-col { display: none; }
+  .about-exp__card { max-width: 100%; padding: 1.25rem 1.5rem; touch-action: auto; cursor: default; }
+  .about-exp__line { left: 1.25rem; }
+  .about-exp__item::after { display: none; }
 }
-
 @media (min-width: 769px) and (max-width: 1024px) {
-  .about-exp {
-    padding: 6rem 2rem;
-  }
-
-  .about-exp__item {
-    grid-template-columns: 1fr 44px 1fr;
-  }
-
-  .about-exp__card {
-    max-width: 100%;
-    padding: 1.5rem 1.75rem;
-  }
-
-  .about-exp__year {
-    font-size: clamp(3rem, 8vw, 5rem);
-  }
+  .about-exp { padding: 6rem 2rem; }
+  .about-exp__item { grid-template-columns: 1fr 44px 1fr; }
+  .about-exp__card { max-width: 100%; padding: 1.5rem 1.75rem; }
+  .about-exp__year { font-size: clamp(3rem, 8vw, 5rem); }
 }
 
 /* ============================================================
-   RESPONSIVE BIO CARD — MOBILE FIX (hiányzott a magyar verzióból)
+   RESPONSIVE BIO CARD
    ============================================================ */
 @media (max-width: 1024px) {
   .about-bio__card { grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; min-height: auto; }
-  
-  .about-bio__card-img {
-    grid-row: auto;
-    padding: 0;
-    height: 260px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    overflow: hidden;
-  }
-  
-  .about-bio__card-img img {
-    position: relative;
-    top: auto; left: auto; right: auto; bottom: auto;
-    width: auto;
-    height: 140%;
-    max-width: 140%;
-    object-fit: cover;
-    object-position: center 10%;
-  }
-  
+  .about-bio__card-img { grid-row: auto; padding: 0; height: 260px; display: flex; align-items: flex-start; justify-content: center; overflow: hidden; }
+  .about-bio__card-img img { position: relative; top: auto; left: auto; right: auto; bottom: auto; width: auto; height: 140%; max-width: 140%; object-fit: cover; object-position: center 10%; }
   .about-bio__card-body { padding: 0.75rem 1.25rem 0.5rem; }
   .about-bio__card-footer { padding: 0.5rem 1.25rem 0.5rem; }
 }
-@media (max-width: 480px) {
-  .about-bio__card-img {
-    height: 220px;
-  }
-}
+@media (max-width: 480px) { .about-bio__card-img { height: 220px; } }
 
 /* ============================================================
    PREFERS REDUCED MOTION
@@ -1034,187 +663,6 @@ body:not(.touch-device) .ptr-dot { display: block; }
   *, *:before, *:after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; animation-delay: 0ms !important; transition-duration: .01ms !important; transition-delay: 0ms !important; }
   .pull-text { transform: translateY(0) !important; }
   .stage-viewport { transform: none !important; }
-  .cam-board { transform: none !important; opacity: 1 !important; }
-}
-
-/* BADGES */
-.contact-badges {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-.contact-badge {
-  font-family: var(--ff-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  padding: 0.4rem 1rem;
-  background: rgba(255,255,255,0.03);
-  white-space: nowrap;
-  transition: border-color 0.3s, color 0.3s;
-}
-.contact-badge:hover {
-  border-color: rgba(255,255,255,0.2);
-  color: var(--text);
-}
-
-/* HEADING — középre + távolabb a kártyától */
-.contact-hero__heading {
-  font-family: var(--ff-syne);
-  font-size: clamp(1.8rem, 8vw, 6rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  color: var(--text);
-}
-
-@media (max-width: 480px) {
-  .contact-hero__heading {
-    font-size: 2rem;
-  }
-}
-
-/* HERO INNER — középre */
-.contact-hero {
-  align-items: center;
-}
-.contact-hero__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* RULE ROW (ha volt) */
-.contact-hero__rule-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  width: 100%;
-}
-.contact-hero__rule-line {
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-  max-width: 120px;
-}
-.contact-hero__rule-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--text-muted);
-  opacity: 0.4;
-}
-
-/* KÁRTYA — teljes szélesség + középre */
-.contact-card {
-  width: 100%;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-}
-
-/* KÁRTYA BODY — középre igazítva */
-.contact-card__body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem 2.25rem 1.25rem;
-}
-.contact-card__title-row {
-  justify-content: center;
-}
-.contact-card__intro {
-  max-width: 480px;
-}
-
-/* GOMBOK — 3 egy sorba, helyes pointer + kattintás */
-
-
-/* FOOTER — középre */
-.contact-card__footer {
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-/* LIGHT CANVAS — pointer-events le */
-.contact-card__light {
-  pointer-events: none;
-}
-
-/* MOBIL */
-@media (max-width: 640px) {
-  .contact-card__links {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .contact-card__link {
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .contact-badges {
-    justify-content: center;
-  }
-}
-
-/* ============================================================
-   WORK TABS LOGIC
-   ============================================================ */
-.work-tabs-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 3rem 2rem 1rem;
-  background: #ebebeb;
-  position: relative;
-  z-index: 100;
-}
-
-.work-tab-btn {
-  font-family: var(--ff-mono);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: transparent;
-  border: 1px solid rgba(20, 20, 20, 0.2);
-  color: #141414;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.work-tab-btn:hover {
-  border-color: rgba(20, 20, 20, 0.5);
-}
-
-.work-tab-btn.active {
-  background: #141414;
-  color: #ebebeb;
-  border-color: #141414;
-}
-
-.work-tab-content {
-  display: none;
-}
-
-.work-tab-content.active {
-  display: block;
-  animation: fadeInTab 0.4s ease forwards;
-}
-
-@keyframes fadeInTab {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
@@ -1226,22 +674,36 @@ body:not(.touch-device) .ptr-dot { display: block; }
   <svg width="16" height="20" viewBox="0 0 14 18" fill="none">
     <path d="M0.5 0.5L13 10.5H5.5L2.5 17.5L0.5 0.5Z" fill="#fff" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
   </svg>
-  <div class="ptr-badge">Te</div>
+  <div class="ptr-badge" data-i18n="badge">You</div>
 </div>
 
 <header class="top-bar" id="topBar">
   <div class="top-bar__brand" data-cursor-hover="true">
-    <a href="/">Portfólió</a>
+    <a href="/" data-i18n="brand">Portfolio</a>
   </div>
   <div class="top-bar__time" id="liveClock">Budapest — 00:00:00 CET</div>
-  <nav class="top-bar__links">
-
-<a href="/cv.html" class="lang-switch" id="langSwitch">
-  <span class="lang-switch__txt">ENG</span>
-  <span class="lang-switch__arrow">↗</span>
-</a> 
-  </nav>
+  <nav class="top-bar__links" aria-hidden="true"></nav>
 </header>
+
+<!-- ===================== NYELVVÁLTÓ ===================== -->
+<div class="lang-switcher" id="langSwitcher" role="group" aria-label="Language / Nyelv">
+  <button type="button" class="lang-flag" data-lang="hu" aria-label="Magyar" title="Magyar" aria-pressed="false">
+    <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+      <rect width="36" height="12" fill="#CD2A3E"/>
+      <rect y="12" width="36" height="12" fill="#FFFFFF"/>
+      <rect y="24" width="36" height="12" fill="#436F4D"/>
+    </svg>
+  </button>
+  <button type="button" class="lang-flag" data-lang="en" aria-label="English" title="English" aria-pressed="true">
+    <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+      <rect width="36" height="36" fill="#012169"/>
+      <path d="M0 0L36 36M36 0L0 36" stroke="#FFFFFF" stroke-width="7"/>
+      <path d="M0 0L36 36M36 0L0 36" stroke="#C8102E" stroke-width="2.4"/>
+      <path d="M18 0V36M0 18H36" stroke="#FFFFFF" stroke-width="10"/>
+      <path d="M18 0V36M0 18H36" stroke="#C8102E" stroke-width="6"/>
+    </svg>
+  </button>
+</div>
 
 <main>
 
@@ -1273,14 +735,14 @@ body:not(.touch-device) .ptr-dot { display: block; }
 
       <section class="hero-center">
         <div class="hero-center-wrap">
-          <span class="hero-eyebrow" id="heroEye">DIGITÁLIS STRATÉGA</span>
+          <span class="hero-eyebrow" id="heroEye" data-i18n="heroEye">DIGITAL STRATEGIST</span>
           <div style="display:block"><div class="mask-clip"><div class="pull-text" id="pullFirst">BELLÉR</div></div></div>
           <div style="display:block"><div class="mask-clip"><div class="pull-text txt-outline" id="pullLast">ZOLTÁN EZRA</div></div></div>
           <span class="hero-sub" id="heroSub">"Jack of all trades, master of none...</span>
         </div>
       </section>
 
-      <div class="user-sel" id="userSel"><div class="user-sel__tag" id="userSelTag">Húzd a mozgatáshoz</div></div>
+      <div class="user-sel" id="userSel"><div class="user-sel__tag" id="userSelTag" data-i18n="dragTag">Drag to move</div></div>
       <div class="collab-ptr" id="collabPtr">
         <svg width="16" height="20" viewBox="0 0 14 18" fill="none"><path d="M0.5 0.5L13 10.5H5.5L2.5 17.5L0.5 0.5Z" fill="#a78bfa"/></svg>
         <div class="collab-ptr__name">Zoli</div>
@@ -1355,7 +817,7 @@ body:not(.touch-device) .ptr-dot { display: block; }
         <span class="about-deco__rule about-deco__rule--right"></span>
         <span class="about-deco__orbit"></span>
         <span class="about-deco__dots"></span>
-        <span class="about-deco__label">PROFIL — 2026</span>
+        <span class="about-deco__label" data-i18n="aboutLabel">PROFILE — 2026</span>
       </div>
 
       <div class="about-bio__card" id="bioCard">
@@ -1366,32 +828,30 @@ body:not(.touch-device) .ptr-dot { display: block; }
         <div class="about-bio__card-body">
           <div class="about-bio__card-title">
             <h2>Bellér Zoltán Ezra</h2>
-            <span class="about-bio__card-type">Digitális Stratéga</span>
+            <span class="about-bio__card-type" data-i18n="bioType">Digital Strategist</span>
           </div>
           <div class="about-bio__card-stats">
             <div class="about-bio__card-stat">
-              <span class="about-bio__card-stat-label">Típus</span>
-              <span class="about-bio__card-stat-value">Generalista</span>
+              <span class="about-bio__card-stat-label" data-i18n="statType">Type</span>
+              <span class="about-bio__card-stat-value" data-i18n="statTypeVal">Generalist</span>
             </div>
             <div class="about-bio__card-stat">
               <span class="about-bio__card-stat-label">XP</span>
-              <span class="about-bio__card-stat-value">5+ év</span>
+              <span class="about-bio__card-stat-value" data-i18n="statXpVal">5+ yrs</span>
             </div>
             <div class="about-bio__card-stat">
-              <span class="about-bio__card-stat-label">Bázis</span>
+              <span class="about-bio__card-stat-label" data-i18n="statBase">Base</span>
               <span class="about-bio__card-stat-value">Budapest, HU</span>
             </div>
           </div>
-          <div class="about-bio__card-desc" data-scroll-text>
-            Hiszek abban, hogy a mai világban az igazi értéket nem egyetlen specializáció adja, hanem az a képesség, hogy valaki képes különböző területek tudását összekapcsolni: technológiát, üzleti gondolkodást és kreativitást. Ezt a szemléletet minden projektbe magammal viszem.
-          </div>
+          <div class="about-bio__card-desc" data-scroll-text data-i18n="bioDesc">I believe that in today's world, real value comes not from a single specialization, but from the ability to connect knowledge across different fields: technology, business thinking, and creativity. I bring this mindset to every project.</div>
           <div class="about-bio__card-skills">
             <span>★ Frontend (Senior)</span>
             <span>★ Backend (Senior)</span>
             <span>★ UI/UX</span>
             <span>★ AI & MCP</span>
             <span>★ Algorithmic Trading / EA Dev.</span>
-            <span>★ Automatizáció</span>
+            <span data-i18n="skillAuto">★ Automation</span>
             <span>★ Quant Research</span>
           </div>
         </div>
@@ -1400,12 +860,12 @@ body:not(.touch-device) .ptr-dot { display: block; }
           <span>2026 — HU</span>
         </div>
       </div>
-      <div class="about-bio__scroll-hint" id="aboutScrollHint"><span>Lapozz</span></div>
+      <div class="about-bio__scroll-hint" id="aboutScrollHint"><span data-i18n="scrollHint">Scroll</span></div>
     </section>
 
     <!-- Experience Timeline -->
     <section class="about-exp" id="aboutExp">
-      <h2 class="about-exp__heading">Tapasztalat</h2>
+      <h2 class="about-exp__heading" data-i18n="expHeading">Experience</h2>
       <div class="about-exp__line" aria-hidden="true"><div class="about-exp__line-fill" id="expLineFill"></div></div>
 
       <div class="about-exp__item">
@@ -1413,10 +873,11 @@ body:not(.touch-device) .ptr-dot { display: block; }
         <div class="about-exp__dot-col"><span class="about-exp__dot"></span></div>
         <div class="about-exp__card-col">
           <div class="about-exp__card">
-            <span class="about-exp__period">2025 — jelen</span>
-            <h3>Fejlesztő & Vállalkozó</h3>
-            <span class="about-exp__company">Egyéni Vállalkozás</span>
-<p>Magas szintű full-stack fejlesztés és automatizálás, Awwwards-kategóriás UI/UX tervezés, valamint aktív tőzsdei kereskedelem (day trading) célú kvantitatív algoritmusfejlesztés</p></div>
+            <span class="about-exp__period" data-i18n="exp1Period">2025 — present</span>
+            <h3 data-i18n="exp1Title">Developer & Entrepreneur</h3>
+            <span class="about-exp__company" data-i18n="exp1Company">Sole Proprietorship</span>
+            <p data-i18n="exp1Desc">High-level full-stack development and automation, Awwwards-category UI/UX design, and quantitative algorithm development for active day trading.</p>
+          </div>
         </div>
       </div>
 
@@ -1426,12 +887,9 @@ body:not(.touch-device) .ptr-dot { display: block; }
         <div class="about-exp__card-col">
           <div class="about-exp__card">
             <span class="about-exp__period">2024 — 2025 </span>
-            <h3>AI Trainer & Fejlesztő</h3>
+            <h3 data-i18n="exp2Title">AI Trainer & Developer</h3>
             <span class="about-exp__company">BossTech AI Solutions Kft</span>
-            <p>AI alapú chatbotok, MCP szerverek, adatfeldolgozó és
-folyamat-optimalizáló eszközök fejlesztése, valamint AI
-integrációk megvalósítása különböző üzleti
-rendszerekhez.</p>
+            <p data-i18n="exp2Desc">Development of AI-based chatbots, MCP servers, data processing and workflow optimization tools, as well as implementing AI integrations for various business systems.</p>
           </div>
         </div>
       </div>
@@ -1442,12 +900,9 @@ rendszerekhez.</p>
         <div class="about-exp__card-col">
           <div class="about-exp__card">
             <span class="about-exp__period">2022 – 2024</span>
-            <h3>Menedzser & Traffic Manager</h3>
+            <h3 data-i18n="exp3Title">Manager & Traffic Manager</h3>
             <span class="about-exp__company">SilkRoad Models LLC.</span>
-            <p>Feladataim közé tartozott 30+ fős csapat
-koordinálása, közösségi média stratégia tervezése és
-végrehajtása, kampánymenedzsment, valamint 7+
-nemzetközi influencer projekt irányítása.</p>
+            <p data-i18n="exp3Desc">My responsibilities included coordinating a team of over 30 people, planning and executing social media strategies, campaign management, and directing 7+ international influencer projects.</p>
           </div>
         </div>
       </div>
@@ -1458,9 +913,9 @@ nemzetközi influencer projekt irányítása.</p>
         <div class="about-exp__card-col">
           <div class="about-exp__card">
             <span class="about-exp__period">2021 — 2022</span>
-            <h3>Kockázatkezelő Gyakornok</h3>
+            <h3 data-i18n="exp4Title">Risk Management Intern</h3>
             <span class="about-exp__company">Raiffeisen Bank Zrt</span>
-            <p>Pénzügyi jelentések értelmezése, kockázatértékelés és adatbáziskezelés. Az első komoly vállalati környezetben szerzett tapasztalat, amely megalapozta a precíz, adatvezérelt gondolkodásomat.</p>
+            <p data-i18n="exp4Desc">Interpreting financial reports, risk assessment, and database management. My first experience in a corporate environment, laying the foundations for my precise, data-driven mindset.</p>
           </div>
         </div>
       </div>
@@ -1489,11 +944,11 @@ nemzetközi influencer projekt irányítása.</p>
           <div class="sticky-left">
             <div class="sticky-navigation-side-about">
               <div data-wrap="about" class="side-link-wrap"><a data-link="about" href="#" class="side-link-text">bold ideas</a><div data-scroll="0%" bold-ideas="" class="side-link-corners-wrap"><div class="link-corners"><div class="tl"></div><div class="tr"></div></div><div class="link-corners"><div class="bl"></div><div class="br"></div></div></div></div>
-              <div data-wrap="about" class="side-link-wrap"><a data-link="about" href="#" class="side-link-text">kreatív megoldások</a><div data-scroll="33%" creative-solutions="" class="side-link-corners-wrap"><div class="link-corners"><div class="tl"></div><div class="tr"></div></div><div class="link-corners"><div class="bl"></div><div class="br"></div></div></div></div>
-              <div data-wrap="about" class="side-link-wrap"><a data-link="about" href="#" class="side-link-text">lenyűgöző vizualitás</a><div data-scroll="66%" stunning-visuals="" class="side-link-corners-wrap"><div class="link-corners"><div class="tl"></div><div class="tr"></div></div><div class="link-corners"><div class="bl"></div><div class="br"></div></div></div></div>
+              <div data-wrap="about" class="side-link-wrap"><a data-link="about" href="#" class="side-link-text" data-i18n="sideA2">creative solutions</a><div data-scroll="33%" creative-solutions="" class="side-link-corners-wrap"><div class="link-corners"><div class="tl"></div><div class="tr"></div></div><div class="link-corners"><div class="bl"></div><div class="br"></div></div></div></div>
+              <div data-wrap="about" class="side-link-wrap"><a data-link="about" href="#" class="side-link-text" data-i18n="sideA3">stunning visuals</a><div data-scroll="66%" stunning-visuals="" class="side-link-corners-wrap"><div class="link-corners"><div class="tl"></div><div class="tr"></div></div><div class="link-corners"><div class="bl"></div><div class="br"></div></div></div></div>
             </div>
             <div class="sticky-navigation-side-services">
-              <div data-wrap="service" class="side-link-wrap"><a data-link="service" href="#" class="side-link-text">fejlesztés</a><div data-service="film" class="side-link-corners-wrap"><div class="link-corners"><div class="tl"></div><div class="tr"></div></div><div class="link-corners"><div class="bl"></div><div class="br"></div></div></div></div>
+              <div data-wrap="service" class="side-link-wrap"><a data-link="service" href="#" class="side-link-text" data-i18n="sideS1">development</a><div data-service="film" class="side-link-corners-wrap"><div class="link-corners"><div class="tl"></div><div class="tr"></div></div><div class="link-corners"><div class="bl"></div><div class="br"></div></div></div></div>
               <div data-wrap="service" class="side-link-wrap"><a data-link="service" href="#" class="side-link-text">algo-trading</a><div data-service="photo" class="side-link-corners-wrap"><div class="link-corners"><div class="tl"></div><div class="tr"></div></div><div class="link-corners"><div class="bl"></div><div class="br"></div></div></div></div>
               <div data-wrap="service" class="side-link-wrap"><a data-link="service" href="#" class="side-link-text">AI</a><div data-service="cgi" class="side-link-corners-wrap"><div class="link-corners"><div class="tl"></div><div class="tr"></div></div><div class="link-corners"><div class="bl"></div><div class="br"></div></div></div></div>
             </div>
@@ -1510,8 +965,8 @@ nemzetközi influencer projekt irányítása.</p>
                   </div>
                   <div id="w-node-_450eeaf8-3d5d-1d64-792d-f798ad177895-d5cfaf70" class="about-description-wrap">
                     <div class="custom-about-block">
-                      <span class="custom-about-label">szolgáltatások &amp; készségek</span>
-                      <p class="custom-about-q">Szóval akkor<br/><em>mit is csinálok?</em></p>
+                      <span class="custom-about-label" data-i18n="aboutQLabel">services &amp; skills</span>
+                      <p class="custom-about-q" data-i18n-html="aboutQ">So then,<br/><em>what do I do?</em></p>
                       <div class="custom-about-rule"></div>
                     </div>
                   </div>
@@ -1528,47 +983,43 @@ nemzetközi influencer projekt irányítása.</p>
               <div class="services-content-wrap">
                 <div data-index="1" data-service="film" class="services-content-card is-first">
                   <div class="services-content-text-wrap">
-                    <div class="services-headline-wrap"><h2 class="services-big-heading is-film">FEJLESZTÉS</h2></div>
+                    <div class="services-headline-wrap"><h2 class="services-big-heading is-film" data-i18n="svc1">DEVELOPMENT</h2></div>
                     <div class="services-description-wrap">
                       <div class="services-description-line-wrap"><div class="description-line"></div></div>
                       <div class="services-description-text-wrap">
-                        <div class="description-text-wrap"><p ts-text-lines-up-once="" class="services-decription-text">A kód nem cél; eszköz.<br/>Vizuálisan lenyűgöző weboldalakat és digitális élményeket hozok létre, modern technológiákra építve, stabil és skálázható rendszerekkel megtámogatva.<br/><br/><strong>Gyorsan, érthetően, működőképesen.</strong></p></div>
+                        <div class="description-text-wrap"><p ts-text-lines-up-once="" class="services-decription-text" data-i18n-html="svc1Text">Code is not the goal; it's a tool.<br/>I build visually stunning websites and digital experiences built on modern technologies, backed by stable and scalable systems.<br/><br/><strong>Fast, clear, and functional.</strong></p></div>
                         <div class="services-tag-wrap"><div class="services-tag"><div class="tag-line"></div><p class="tag-text">Frontend (Senior)</p></div><div class="services-tag"><div class="tag-line"></div><p class="tag-text">Backend (Senior)</p></div><div class="services-tag"><div class="tag-line"></div><p class="tag-text">UI/UX (Senior)</p></div></div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div data-index="2" data-service="photo" class="services-content-card is-second">
-  <div class="services-content-text-wrap">
-    <div class="services-headline-wrap"><h2 class="services-big-heading is-photo">ALGO TRADING</h2></div>
-    <div class="services-description-wrap">
-      <div class="services-description-line-wrap"><div class="description-line is-manual"></div></div>
-      <div class="services-description-text-wrap">
-        <div class="description-text-wrap">
-          <p ts-text-lines-up-once="" class="services-decription-text">
-            A piac is csak egy óriási adatbázis.<br/>
-            Kvantitatív kutatásokra és matematikai modellekre épülő, teljesen automatizált kereskedési rendszereket fejlesztek.<br/><br/>
-            <strong>Ahol az érzelmeket és a megérzéseket tiszta kódra és backtestelt statisztikára cserélem.</strong>
-          </p>
-        </div>
-        <div class="services-tag-wrap">
-          <div class="services-tag"><div class="tag-line"></div><p class="tag-text">QUANT RESEARCH</p></div>
-          <div class="services-tag"><div class="tag-line"></div><p class="tag-text">MQL4 / MQL5</p></div>
-          <div class="services-tag"><div class="tag-line"></div><p class="tag-text">ALGORITHMS</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-                <div data-index="3" data-service="cgi" class="services-content-card is-third">
                   <div class="services-content-text-wrap">
-                    <div class="services-headline-wrap"><h2 class="services-big-heading is-cgi">AUTOMATIZÁCIÓ</h2></div>
-                    <div class="services-headline-wrap has-gap"><h2 class="services-big-heading is-prod">& AI</h2></div>
+                    <div class="services-headline-wrap"><h2 class="services-big-heading is-photo" data-i18n="svc2">ALGO TRADING</h2></div>
                     <div class="services-description-wrap">
                       <div class="services-description-line-wrap"><div class="description-line is-manual"></div></div>
                       <div class="services-description-text-wrap">
-                        <div class="description-text-wrap"><p ts-text-lines-up-once="" class="services-decription-text">Az AI nem csak divatszó; munkaeszköz.<br/>Prompt engineering, chatbot architektúra, workflow automatizáció.<br/><br/><strong>Több output, kevesebb ismétlés.</strong></p></div>
-                        <div class="services-tag-wrap"><div class="services-tag"><div class="tag-line"></div><p class="tag-text">PROMPTING</p></div><div class="services-tag"><div class="tag-line"></div><p class="tag-text">CHATBOTOK</p></div><div class="services-tag"><div class="tag-line"></div><p class="tag-text">Algoritmusok</p></div></div>
+                        <div class="description-text-wrap">
+                          <p ts-text-lines-up-once="" class="services-decription-text" data-i18n-html="svc2Text">The market is just a massive database.<br/>I develop fully automated trading systems built on quantitative research and mathematical models.<br/><br/><strong>Where emotions and gut feelings are replaced with clean code and backtested statistics.</strong></p>
+                        </div>
+                        <div class="services-tag-wrap">
+                          <div class="services-tag"><div class="tag-line"></div><p class="tag-text">QUANT RESEARCH</p></div>
+                          <div class="services-tag"><div class="tag-line"></div><p class="tag-text">MQL4 / MQL5</p></div>
+                          <div class="services-tag"><div class="tag-line"></div><p class="tag-text">ALGORITHMS</p></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div data-index="3" data-service="cgi" class="services-content-card is-third">
+                  <div class="services-content-text-wrap">
+                    <div class="services-headline-wrap"><h2 class="services-big-heading is-cgi" data-i18n="svc3a">AUTOMATION</h2></div>
+                    <div class="services-headline-wrap has-gap"><h2 class="services-big-heading is-prod" data-i18n="svc3b">& AI</h2></div>
+                    <div class="services-description-wrap">
+                      <div class="services-description-line-wrap"><div class="description-line is-manual"></div></div>
+                      <div class="services-description-text-wrap">
+                        <div class="description-text-wrap"><p ts-text-lines-up-once="" class="services-decription-text" data-i18n-html="svc3Text">AI is not just a buzzword; it's a working tool.<br/>Prompt engineering, chatbot architecture, workflow automation.<br/><br/><strong>More output, less repetition.</strong></p></div>
+                        <div class="services-tag-wrap"><div class="services-tag"><div class="tag-line"></div><p class="tag-text">PROMPTING</p></div><div class="services-tag"><div class="tag-line"></div><p class="tag-text" data-i18n="tagChatbots">CHATBOTS</p></div><div class="services-tag"><div class="tag-line"></div><p class="tag-text" data-i18n="tagAlgos">Algorithms</p></div></div>
                       </div>
                     </div>
                   </div>
@@ -1582,7 +1033,7 @@ nemzetközi influencer projekt irányítása.</p>
               <div class="work-sticky-wrap">
                 <div class="section-work-heading-wrap">
                   <div class="work-heading-wrapper">
-                    <div class="our-work-image"><img src="projektek.png" alt="Projektek" class="full-image"/></div>
+                    <div class="our-work-image"><img src="projects.png" alt="Projects" class="full-image" data-i18n-attr="alt:altProjects;src:projectsImage"/></div>
                     <div class="work-corners-wrap"><div class="work-corners"><div class="wtl"></div><div class="wtr"></div></div><div class="work-corners"><div class="wbl"></div><div class="wbr"></div></div></div>
                     <div class="work-cross-wrap"><div class="work-cros"><div class="work-cross-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 10H10V-2.98023e-07" stroke="#595959"/><path d="M-2.98023e-07 10H10V20" stroke="#595959"/></svg></div><div class="work-cross-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 10H10V-2.98023e-07" stroke="#595959"/><path d="M-2.98023e-07 10H10V20" stroke="#595959"/></svg></div></div><div class="work-cros"><div class="work-cross-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 10H10V-2.98023e-07" stroke="#595959"/><path d="M-2.98023e-07 10H10V20" stroke="#595959"/></svg></div><div class="work-cross-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 10H10V-2.98023e-07" stroke="#595959"/><path d="M-2.98023e-07 10H10V20" stroke="#595959"/></svg></div></div></div>
                   </div>
@@ -1595,10 +1046,10 @@ nemzetközi influencer projekt irányítása.</p>
                   <div data-order="1" role="listitem" class="work-content-item w-dyn-item"><a href="https://nakavision.com" target="_blank" class="work-content-item-wrap w-inline-block"><div class="work-content-item-card-wrap"><div class="work-content-content"><div class="work-content-image"><img src="naka.jpg" alt="Nakavision" sizes="100vw" class="full-image"/></div><div class="work-content-title"><div class="cards-headline">Nakavision</div></div></div><div class="work-content-services"><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>FRONTEND</div></div></div><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>UI/UX</div></div></div></div></div><div class="glitch-layer"></div></a></div>
                   <div data-order="2" role="listitem" class="work-content-item w-dyn-item" style="visibility:hidden;pointer-events:none;"><a href="#" class="work-content-item-wrap w-inline-block"><div class="work-content-item-card-wrap"><div class="work-content-content"><div class="work-content-image"></div><div class="work-content-title"><div class="cards-headline"></div></div></div><div class="work-content-services"></div></div><div class="glitch-layer"></div></a></div>
                   <div data-order="3" role="listitem" class="work-content-item w-dyn-item"><a href="https://hype-tattoo.com" target="_blank" class="work-content-item-wrap w-inline-block"><div class="work-content-item-card-wrap"><div class="work-content-content"><div class="work-content-image"><img src="hype.png" alt="Hype Tattoo" class="full-image"/></div><div class="work-content-title"><div class="cards-headline">HYPE-TATTOO</div></div></div><div class="work-content-services"><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>FRONTEND</div></div></div><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>UI/UX</div></div></div></div></div><div class="glitch-layer"></div></a></div>
-                  <div data-order="4" role="listitem" class="work-content-item w-dyn-item"><a href="https://bellerzoltanezra.hu" target="_blank" class="work-content-item-wrap w-inline-block"><div class="work-content-item-card-wrap"><div class="work-content-content"><div class="work-content-image"><img src="portfolio.png" alt="Bellér Zoltán Ezra Portfólió" sizes="100vw" class="full-image"/></div><div class="work-content-title"><div class="cards-headline">portfólióm</div></div></div><div class="work-content-services"><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>FRONTEND</div></div></div><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>UI/UX</div></div></div></div></div><div class="glitch-layer"></div></a></div>
+                  <div data-order="4" role="listitem" class="work-content-item w-dyn-item"><a href="https://bellerzoltanezra.hu" target="_blank" class="work-content-item-wrap w-inline-block"><div class="work-content-item-card-wrap"><div class="work-content-content"><div class="work-content-image"><img src="portfolio.png" alt="Bellér Zoltán Ezra Portfolio" sizes="100vw" class="full-image" data-i18n-attr="alt:altPortfolio"/></div><div class="work-content-title"><div class="cards-headline" data-i18n="cardPortfolio">my portfolio</div></div></div><div class="work-content-services"><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>FRONTEND</div></div></div><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>UI/UX</div></div></div></div></div><div class="glitch-layer"></div></a></div>
                   <div data-order="5" role="listitem" class="work-content-item w-dyn-item"><a href="https://millions-agency.com" target="_blank" class="work-content-item-wrap w-inline-block"><div class="work-content-item-card-wrap"><div class="work-content-content"><div class="work-content-image"><img src="millions.png" alt="Millions Agency" class="full-image"/></div><div class="work-content-title"><div class="cards-headline">Millions Agency</div></div></div><div class="work-content-services"><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>MARKETING</div></div></div><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>MANAGEMENT</div></div></div></div></div><div class="glitch-layer"></div></a></div>
                   <div data-order="6" role="listitem" class="work-content-item w-dyn-item"><a href="https://linkfluencer.io" target="_blank" class="work-content-item-wrap w-inline-block"><div class="work-content-item-card-wrap"><div class="work-content-content"><div class="work-content-image"><img src="linkfluencer.png" alt="Linkfluencer" sizes="100vw" class="full-image"/></div><div class="work-content-title"><div class="cards-headline">Linkfluencer</div></div></div><div class="work-content-services"><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>MARKETING</div></div></div><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>FRONTEND</div></div></div></div></div><div class="glitch-layer"></div></a></div>
-                  <div data-order="7" role="listitem" class="work-content-item w-dyn-item"><a href="#contact" class="work-content-item-wrap w-inline-block"><div class="work-content-item-card-wrap"><div class="work-content-content"><div class="work-content-image"><img src="you.jpg" alt="A te projekted" sizes="100vw" class="full-image"/></div><div class="work-content-title"><div class="cards-headline">A te projekted helye :)</div></div></div><div class="work-content-services"><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div>Amit csak szeretnél.</div></div></div></div></div><div class="glitch-layer"></div></a></div>
+                  <div data-order="7" role="listitem" class="work-content-item w-dyn-item"><a href="#contact" class="work-content-item-wrap w-inline-block"><div class="work-content-item-card-wrap"><div class="work-content-content"><div class="work-content-image"><img src="you.jpg" alt="Your project" sizes="100vw" class="full-image" data-i18n-attr="alt:altYour"/></div><div class="work-content-title"><div class="cards-headline" data-i18n="cardYours">Your project goes here :)</div></div></div><div class="work-content-services"><div class="work-content-single-service"><div class="work-content-service-line is-hp-card"></div><div class="work-content-service-text is-hp-card"><div data-i18n="cardYoursSvc">Whatever you wish for.</div></div></div></div></div><div class="glitch-layer"></div></a></div>
                 </div>
               </div>
             </div>
@@ -1610,9 +1061,9 @@ nemzetközi influencer projekt irányítása.</p>
                 <div class="clients-content-wrap">
                   <div data-gap-991="0.75rem" data-speed="0.8" data-gap-default="4rem" class="splide"><div class="splide__track"><div class="splide__list"><div class="splide__slide"><div class="splide-text">PYTHON</div></div><div class="splide__slide"><div class="splide-text is-bold">CSS</div></div><div class="splide__slide"><div class="splide-text">REACT</div></div><div class="splide__slide"><div class="splide-text is-bold">NODE</div></div></div></div></div>
                   <div data-gap-991="0.75rem" data-speed="-0.8" data-gap-default="4rem" class="splide"><div data-overflow="" class="splide__track"><div class="splide__list"><div class="splide__slide"><div class="splide-text is-bold">JAVASCRIPT</div></div><div class="splide__slide"><div class="splide-text">PANDAS</div></div><div class="splide__slide"><div class="splide-text is-bold">TYPESCRIPT</div></div><div class="splide__slide"><div class="splide-text">DESIGN</div></div></div></div></div>
-                  <div data-gap-991="0.75rem" data-speed="0.8" data-gap-default="4rem" class="splide"><div class="splide__track"><div class="splide__list"><div class="splide__slide"><div class="splide-text">MODELL CONTEXT PROTOCOLL</div></div><div class="splide__slide"><div class="splide-text is-bold">MQL5</div></div><div class="splide__slide"><div class="splide-text">SEO</div></div><div class="splide__slide"><div class="splide-text is-bold">AI AGENTS</div></div></div></div></div>
+                  <div data-gap-991="0.75rem" data-speed="0.8" data-gap-default="4rem" class="splide"><div class="splide__track"><div class="splide__list"><div class="splide__slide"><div class="splide-text" data-i18n="spl1">MODEL CONTEXT PROTOCOL</div></div><div class="splide__slide"><div class="splide-text is-bold">MQL5</div></div><div class="splide__slide"><div class="splide-text">SEO</div></div><div class="splide__slide"><div class="splide-text is-bold">AI AGENTS</div></div></div></div></div>
                   <div data-gap-991="0.75rem" data-speed="-0.8" data-gap-default="4rem" class="splide"><div class="splide__track"><div class="splide__list"><div class="splide__slide"><div class="splide-text">AI PROMPTS</div></div><div class="splide__slide"><div class="splide-text is-bold">PINE SCRIPT</div></div><div class="splide__slide"><div class="splide-text">XGBOOST</div></div><div class="splide__slide"><div class="splide-text is-bold">UI/UX</div></div></div></div></div>
-                  <div data-gap-991="0.75rem" data-speed="0.8" data-gap-default="4rem" class="splide"><div class="splide__track"><div class="splide__list"><div class="splide__slide"><div class="splide-text">AUTOMATIZATION</div></div><div class="splide__slide"><div class="splide-text is-bold">EXPERT ADVISORS</div></div><div class="splide__slide"><div class="splide-text">MANAGEMENT</div></div><div class="splide__slide"><div class="splide-text is-bold">GIT</div></div></div></div></div>
+                  <div data-gap-991="0.75rem" data-speed="0.8" data-gap-default="4rem" class="splide"><div class="splide__track"><div class="splide__list"><div class="splide__slide"><div class="splide-text" data-i18n="spl2">AUTOMATION</div></div><div class="splide__slide"><div class="splide-text is-bold">EXPERT ADVISORS</div></div><div class="splide__slide"><div class="splide-text">MANAGEMENT</div></div><div class="splide__slide"><div class="splide-text is-bold">GIT</div></div></div></div></div>
                   <div class="blurred-section"></div>
                 </div>
               </div>
@@ -1632,7 +1083,7 @@ nemzetközi influencer projekt irányítása.</p>
         <span class="contact-deco__corner contact-deco__corner--tr"></span>
         <span class="contact-deco__corner contact-deco__corner--bl"></span>
         <span class="contact-deco__corner contact-deco__corner--br"></span>
-        <span class="contact-deco__label">KAPCSOLAT — 2026</span>
+        <span class="contact-deco__label" data-i18n="contactLabel">CONTACT — 2026</span>
         <span class="contact-deco__annotation"></span>
       </div>
 
@@ -1643,14 +1094,14 @@ nemzetközi influencer projekt irányítása.</p>
           <div class="contact-hero__rule-line rev"></div>
         </div>
 
-        <h2 class="contact-hero__heading" id="contactHeading">BESZÉLJÜNK</h2>
+        <h2 class="contact-hero__heading" id="contactHeading" data-i18n="contactHeading">LET'S TALK</h2>
 
         <div class="contact-card" id="contactCard">
           <canvas class="contact-card__light" id="contactLightCanvas" width="200" height="150" aria-hidden="true"></canvas>
           <div class="contact-card__body">
             <div class="contact-card__intro">
-              <p>Minden együttműködés egy ötlettel kezdődik. <br> Ha kreatív partnert keresel, aki segít életre kelteni a tiédet, bátran vedd fel velem a kapcsolatot...</p>
-              <p><br> hogy ne csak ötlet legyen belőle:)</p>
+              <p data-i18n-html="intro1">Every collaboration starts with an idea. <br> If you are looking for a creative partner to help bring yours to life, feel free to get in touch with me...</p>
+              <p data-i18n-html="intro2"><br> so it doesn't just remain an idea :)</p>
             </div>
             <div class="contact-card__links">
               <a href="https://www.facebook.com/zoltan.gonczi.12" target="_blank" rel="noopener" class="contact-card__link">
@@ -1661,11 +1112,22 @@ nemzetközi influencer projekt irányítása.</p>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 7l10 7 10-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                 <span id="emailBtnTxt">hello@bellerzoltanezra.hu</span>
               </button>
+
+              <!-- Önéletrajz megtekintése → honest.html -->
+              <a href="honest.html" class="contact-card__cta" id="cvCta" data-i18n-attr="aria-label:ctaAria;title:ctaAria" aria-label="Open the honest résumé" title="Open the honest résumé">
+                <span class="contact-card__cta-icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="contact-card__cta-text">
+                  <span class="contact-card__cta-tag">VOL. 2</span>
+                  <span class="contact-card__cta-label" data-i18n="ctaLabel">View résumé</span>
+                </span>
+              </a>
             </div>
           </div>
           <div class="contact-card__footer">
             <span>© BELLÉR ZOLTÁN EZRA 2026</span>
-            <span>Minden jog fenntartva</span>
+            <span data-i18n="footerRights">All rights reserved</span>
           </div>
         </div>
       </div>
@@ -1682,6 +1144,233 @@ nemzetközi influencer projekt irányítása.</p>
 <script src="https://cdn.jsdelivr.net/gh/flowtricks/scripts@v1.0.4/variables-color-scroll.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+<script>
+/* ============================================================
+   I18N CORE — kétnyelvű (en / hu) rendszer
+   - központi szótár (DICT), kulcs alapú renderelés: oda-vissza váltásnál
+     a szöveg mindig a szótárból épül újra, így nincs szövegvesztés / dupla fordítás
+   - setLang(lang) kezel mindent: mentés, <html lang>, gombok, szövegek, meta, hookok
+   - nincs újratöltés, nincs URL/routing módosítás
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var SUPPORTED = ['en', 'hu'];
+  var DEFAULT_LANG = 'en';
+  var STORAGE_KEY = 'bze.portfolio.lang';
+
+  var DICT = {
+    en: {
+      brand: 'Portfolio', badge: 'You',
+      heroEye: 'DIGITAL STRATEGIST', dragTag: 'Drag to move',
+      editing: 'editing...', snap: 'Snapping to grid...', copied: 'Copied!',
+      quip1: "Let's keep it like this, yeah?", quip2: "Come on.. Don't do that.", quip3: "Again? I just fixed that.", quip4: "Locking the layer... (Just kidding)",
+
+      aboutLabel: 'PROFILE — 2026', bioType: 'Digital Strategist',
+      statType: 'Type', statTypeVal: 'Generalist', statXpVal: '5+ yrs', statBase: 'Base',
+      bioDesc: "I believe that in today's world, real value comes not from a single specialization, but from the ability to connect knowledge across different fields: technology, business thinking, and creativity. I bring this mindset to every project.",
+      skillAuto: '★ Automation', scrollHint: 'Scroll',
+
+      expHeading: 'Experience',
+      exp1Period: '2025 — present', exp1Title: 'Developer & Entrepreneur', exp1Company: 'Sole Proprietorship',
+      exp1Desc: 'High-level full-stack development and automation, Awwwards-category UI/UX design, and quantitative algorithm development for active day trading.',
+      exp2Title: 'AI Trainer & Developer',
+      exp2Desc: 'Development of AI-based chatbots, MCP servers, data processing and workflow optimization tools, as well as implementing AI integrations for various business systems.',
+      exp3Title: 'Manager & Traffic Manager',
+      exp3Desc: 'My responsibilities included coordinating a team of over 30 people, planning and executing social media strategies, campaign management, and directing 7+ international influencer projects.',
+      exp4Title: 'Risk Management Intern',
+      exp4Desc: 'Interpreting financial reports, risk assessment, and database management. My first experience in a corporate environment, laying the foundations for my precise, data-driven mindset.',
+
+      sideA2: 'creative solutions', sideA3: 'stunning visuals', sideS1: 'development',
+      aboutQLabel: 'services & skills',
+      aboutQ: 'So then,<br/><em>what do I do?</em>',
+      svc1: 'DEVELOPMENT', svc2: 'ALGO TRADING', svc3a: 'AUTOMATION', svc3b: '& AI',
+      svc1Text: "Code is not the goal; it's a tool.<br/>I build visually stunning websites and digital experiences built on modern technologies, backed by stable and scalable systems.<br/><br/><strong>Fast, clear, and functional.</strong>",
+      svc2Text: 'The market is just a massive database.<br/>I develop fully automated trading systems built on quantitative research and mathematical models.<br/><br/><strong>Where emotions and gut feelings are replaced with clean code and backtested statistics.</strong>',
+      svc3Text: "AI is not just a buzzword; it's a working tool.<br/>Prompt engineering, chatbot architecture, workflow automation.<br/><br/><strong>More output, less repetition.</strong>",
+      tagChatbots: 'CHATBOTS', tagAlgos: 'Algorithms',
+
+      altProjects: 'Projects', projectsImage: 'projects.png', altPortfolio: 'Bellér Zoltán Ezra Portfolio', altYour: 'Your project',
+      cardPortfolio: 'my portfolio', cardYours: 'Your project goes here :)', cardYoursSvc: 'Whatever you wish for.',
+      spl1: 'MODEL CONTEXT PROTOCOL', spl2: 'AUTOMATION',
+
+      contactLabel: 'CONTACT — 2026', contactHeading: "LET'S TALK",
+      intro1: 'Every collaboration starts with an idea. <br> If you are looking for a creative partner to help bring yours to life, feel free to get in touch with me...',
+      intro2: "<br> so it doesn't just remain an idea :)",
+      ctaLabel: 'View résumé', ctaAria: 'Open the honest résumé',
+      footerRights: 'All rights reserved'
+    },
+    hu: {
+      brand: 'Portfólió', badge: 'Te',
+      heroEye: 'DIGITÁLIS STRATÉGA', dragTag: 'Húzd a mozgatáshoz',
+      editing: 'szerkesztés...', snap: 'Rácshoz igazítom...', copied: 'Kimásolva!',
+      quip1: 'Ezt hagyjuk így, jó?', quip2: 'Tesó .. Ne csináld már.', quip3: 'Megint? Előbb javítottam ki.', quip4: 'Lezárom a layer-t... (Csak viccelek)',
+
+      aboutLabel: 'PROFIL — 2026', bioType: 'Digitális Stratéga',
+      statType: 'Típus', statTypeVal: 'Generalista', statXpVal: '5+ év', statBase: 'Bázis',
+      bioDesc: 'Hiszek abban, hogy a mai világban az igazi értéket nem egyetlen specializáció adja, hanem az a képesség, hogy valaki képes különböző területek tudását összekapcsolni: technológiát, üzleti gondolkodást és kreativitást. Ezt a szemléletet minden projektbe magammal viszem.',
+      skillAuto: '★ Automatizáció', scrollHint: 'Lapozz',
+
+      expHeading: 'Tapasztalat',
+      exp1Period: '2025 — jelen', exp1Title: 'Fejlesztő & Vállalkozó', exp1Company: 'Egyéni Vállalkozás',
+      exp1Desc: 'Magas szintű full-stack fejlesztés és automatizálás, Awwwards-kategóriás UI/UX tervezés, valamint aktív tőzsdei kereskedelem (day trading) célú kvantitatív algoritmusfejlesztés',
+      exp2Title: 'AI Trainer & Fejlesztő',
+      exp2Desc: 'AI alapú chatbotok, MCP szerverek, adatfeldolgozó és folyamat-optimalizáló eszközök fejlesztése, valamint AI integrációk megvalósítása különböző üzleti rendszerekhez.',
+      exp3Title: 'Menedzser & Traffic Manager',
+      exp3Desc: 'Feladataim közé tartozott 30+ fős csapat koordinálása, közösségi média stratégia tervezése és végrehajtása, kampánymenedzsment, valamint 7+ nemzetközi influencer projekt irányítása.',
+      exp4Title: 'Kockázatkezelő Gyakornok',
+      exp4Desc: 'Pénzügyi jelentések értelmezése, kockázatértékelés és adatbáziskezelés. Az első komoly vállalati környezetben szerzett tapasztalat, amely megalapozta a precíz, adatvezérelt gondolkodásomat.',
+
+      sideA2: 'kreatív megoldások', sideA3: 'lenyűgöző vizualitás', sideS1: 'fejlesztés',
+      aboutQLabel: 'szolgáltatások & készségek',
+      aboutQ: 'Szóval akkor<br/><em>mit is csinálok?</em>',
+      svc1: 'FEJLESZTÉS', svc2: 'ALGO TRADING', svc3a: 'AUTOMATIZÁCIÓ', svc3b: '& AI',
+      svc1Text: 'A kód nem cél; eszköz.<br/>Vizuálisan lenyűgöző weboldalakat és digitális élményeket hozok létre, modern technológiákra építve, stabil és skálázható rendszerekkel megtámogatva.<br/><br/><strong>Gyorsan, érthetően, működőképesen.</strong>',
+      svc2Text: 'A piac is csak egy óriási adatbázis.<br/>Kvantitatív kutatásokra és matematikai modellekre épülő, teljesen automatizált kereskedési rendszereket fejlesztek.<br/><br/><strong>Ahol az érzelmeket és a megérzéseket tiszta kódra és backtestelt statisztikára cserélem.</strong>',
+      svc3Text: 'Az AI nem csak divatszó; munkaeszköz.<br/>Prompt engineering, chatbot architektúra, workflow automatizáció.<br/><br/><strong>Több output, kevesebb ismétlés.</strong>',
+      tagChatbots: 'CHATBOTOK', tagAlgos: 'Algoritmusok',
+
+      altProjects: 'Projektek', projectsImage: 'projektek.png', altPortfolio: 'Bellér Zoltán Ezra Portfólió', altYour: 'A te projekted',
+      cardPortfolio: 'portfólióm', cardYours: 'A te projekted helye :)', cardYoursSvc: 'Amit csak szeretnél.',
+      spl1: 'MODELL CONTEXT PROTOCOLL', spl2: 'AUTOMATIZATION',
+
+      contactLabel: 'KAPCSOLAT — 2026', contactHeading: 'BESZÉLJÜNK',
+      intro1: 'Minden együttműködés egy ötlettel kezdődik. <br> Ha kreatív partnert keresel, aki segít életre kelteni a tiédet, bátran vedd fel velem a kapcsolatot...',
+      intro2: '<br> hogy ne csak ötlet legyen belőle:)',
+      ctaLabel: 'Önéletrajz megtekintése', ctaAria: 'Az őszinte önéletrajz megnyitása',
+      footerRights: 'Minden jog fenntartva'
+    }
+  };
+
+  var META = {
+    en: {
+      title: 'Bellér Zoltán Ezra | Frontend, Marketing & AI Developer – Budapest',
+      description: 'Bellér Zoltán Ezra – Digital strategist, frontend developer, marketing specialist and AI solutions builder from Budapest. Websites, brands, automation.',
+      keywords: 'Bellér Zoltán Ezra, frontend developer Budapest, digital strategist, marketing, AI developer, React, Node.js, Senkisem, web development Hungary',
+      ogTitle: 'Bellér Zoltán Ezra | Developer, Marketing & AI – Budapest',
+      ogDescription: 'Systems builder, brand creator and digital strategist. Frontend, Backend, AI & Automation.',
+      ogLocale: 'en_US', ogSite: 'Bellér Zoltán Ezra Portfolio',
+      twTitle: 'Bellér Zoltán Ezra | Developer, Marketing & AI',
+      twDescription: 'Systems builder, brand creator and digital strategist from Budapest.',
+      jobTitle: 'Digital Strategist & Frontend Developer',
+      ldDescription: 'Systems builder, brand creator and digital strategist from Budapest.'
+    },
+    hu: {
+      title: 'Bellér Zoltán Ezra | Full-Stack, FinTech & AI Fejlesztő – Budapest',
+      description: 'Bellér Zoltán Ezra – Digitális stratéga, Full-Stack fejlesztő, marketing szakember és AI megoldások építője Budapestről. Weboldalak, márkák, automatizáció.',
+      keywords: 'Bellér Zoltán Ezra, Full-Stack fejlesztő Budapest, digitális stratéga, marketing, AI fejlesztő, React, Node.js, webfejlesztés Hungary',
+      ogTitle: 'Bellér Zoltán Ezra | Fejlesztő, Marketing & AI – Budapest',
+      ogDescription: 'Rendszerépítő, digitális stratéga. Frontend, Backend, AI & Automatizáció.',
+      ogLocale: 'hu_HU', ogSite: 'Bellér Zoltán Ezra Portfólió',
+      twTitle: 'Bellér Zoltán Ezra | Fejlesztő, Marketing & AI',
+      twDescription: 'Rendszerépítő, márkaalkotó és digitális stratéga Budapestről.',
+      jobTitle: 'Digitális Stratéga & Frontend Fejlesztő',
+      ldDescription: 'Rendszerépítő, márkaalkotó és digitális stratéga Budapestről.'
+    }
+  };
+
+  var state = { lang: DEFAULT_LANG, ready: false, hooks: [] };
+
+  /* localStorage biztonságosan (privát mód / tiltott tárhely esetén sem hibázik) */
+  function safeGet() { try { return window.localStorage.getItem(STORAGE_KEY); } catch (e) { return null; } }
+  function safeSet(v) { try { window.localStorage.setItem(STORAGE_KEY, v); } catch (e) {} }
+  function norm(v) { v = String(v == null ? '' : v).toLowerCase().slice(0, 2); return SUPPORTED.indexOf(v) > -1 ? v : null; }
+
+  function detect() {
+    var fromUrl = null;
+    try { fromUrl = new URLSearchParams(window.location.search).get('lang'); } catch (e) {}
+    if (norm(fromUrl)) return { lang: norm(fromUrl), persist: true };
+    var stored = norm(safeGet());
+    if (stored) return { lang: stored, persist: false };
+    return { lang: DEFAULT_LANG, persist: false };
+  }
+
+  function has(lang, key) { return Object.prototype.hasOwnProperty.call(DICT[lang] || {}, key); }
+  function t(key, lang) {
+    lang = lang || state.lang;
+    if (has(lang, key)) return DICT[lang][key];
+    if (has(DEFAULT_LANG, key)) return DICT[DEFAULT_LANG][key];
+    return '';
+  }
+  function exists(key) { return has(state.lang, key) || has(DEFAULT_LANG, key); }
+
+  function applyDom(root) {
+    root.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n'); if (exists(k)) el.textContent = t(k);
+    });
+    root.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-html'); if (exists(k)) el.innerHTML = t(k);
+    });
+    root.querySelectorAll('[data-i18n-attr]').forEach(function (el) {
+      el.getAttribute('data-i18n-attr').split(';').forEach(function (pair) {
+        var i = pair.indexOf(':'); if (i < 1) return;
+        var attr = pair.slice(0, i).trim(), k = pair.slice(i + 1).trim();
+        if (exists(k)) el.setAttribute(attr, t(k));
+      });
+    });
+  }
+
+  function setMeta(sel, attr, val) { var el = document.querySelector(sel); if (el && val != null) el.setAttribute(attr, val); }
+  function applyMeta(lang) {
+    var m = META[lang] || META[DEFAULT_LANG];
+    document.title = m.title;
+    setMeta('meta[name="description"]', 'content', m.description);
+    setMeta('meta[name="keywords"]', 'content', m.keywords);
+    setMeta('meta[property="og:title"]', 'content', m.ogTitle);
+    setMeta('meta[property="og:description"]', 'content', m.ogDescription);
+    setMeta('meta[property="og:locale"]', 'content', m.ogLocale);
+    setMeta('meta[property="og:site_name"]', 'content', m.ogSite);
+    setMeta('meta[name="twitter:title"]', 'content', m.twTitle);
+    setMeta('meta[name="twitter:description"]', 'content', m.twDescription);
+    var ld = document.getElementById('ldJson');
+    if (ld) {
+      try { var o = JSON.parse(ld.textContent); o.jobTitle = m.jobTitle; o.description = m.ldDescription; ld.textContent = JSON.stringify(o, null, 2); } catch (e) {}
+    }
+  }
+
+  function updateSwitcher(lang) {
+    document.querySelectorAll('.lang-flag').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+    });
+  }
+
+  function setLang(lang, opts) {
+    lang = norm(lang) || DEFAULT_LANG;
+    state.lang = lang;
+    document.documentElement.lang = lang;
+    if (!(opts && opts.persist === false)) safeSet(lang);
+    applyDom(document);
+    applyMeta(lang);
+    updateSwitcher(lang);
+    var notify = state.ready;
+    state.ready = true;
+    if (notify) state.hooks.forEach(function (fn) { try { fn(lang); } catch (e) { console.error('[i18n hook]', e); } });
+  }
+
+  window.I18N = {
+    get lang() { return state.lang; },
+    t: t,
+    setLang: setLang,
+    onChange: function (fn) { if (typeof fn === 'function') state.hooks.push(fn); }
+  };
+
+  /* nyelvváltó gombok */
+  document.querySelectorAll('.lang-flag').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var l = btn.getAttribute('data-lang');
+      if (l !== state.lang) setLang(l);
+    });
+  });
+  /* több lap közötti szinkron */
+  window.addEventListener('storage', function (e) {
+    if (e.key === STORAGE_KEY && norm(e.newValue) && norm(e.newValue) !== state.lang) setLang(e.newValue, { persist: false });
+  });
+
+  var init = detect();
+  setLang(init.lang, { persist: init.persist });
+})();
+</script>
 
 <script>
 /* ============================================================
@@ -1727,6 +1416,7 @@ window.__renderHoloLight = function(ctx, w, h, ryy, rxx) {
   const NO_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   gsap.registerPlugin(ScrollTrigger);
   if (NO_MOTION) gsap.defaults({ duration: 0, ease: 'none' });
+  const MAIL = 'hello@bellerzoltanezra.hu';
 
   /* ---- DUST ---- */
   (function() {
@@ -1755,12 +1445,16 @@ window.__renderHoloLight = function(ctx, w, h, ryy, rxx) {
     tick(); setInterval(tick, 1000);
   })();
 
-  /* ---- NAV HIDE ---- */
+  /* ---- NAV HIDE (a nyelvváltó a navbarral együtt rejtőzik / jelenik meg) ---- */
   (function() {
-    const bar = document.getElementById('topBar'); let last = 0, vis = true;
+    const bar = document.getElementById('topBar'); const sw = document.getElementById('langSwitcher'); let last = 0, vis = true;
     window.addEventListener('scroll', () => {
       const y = window.scrollY, show = y < 100 || y < last;
-      if (show !== vis) { vis = show; gsap.to(bar, { yPercent: show ? 0 : -100, duration: .3, ease: 'power2.out' }); }
+      if (show !== vis) {
+        vis = show;
+        gsap.to(bar, { yPercent: show ? 0 : -100, duration: .3, ease: 'power2.out' });
+        if (sw) gsap.to(sw, { y: show ? 0 : -90, duration: .3, ease: 'power2.out' });
+      }
       last = y;
     }, { passive: true });
   })();
@@ -1817,53 +1511,67 @@ window.__renderHoloLight = function(ctx, w, h, ryy, rxx) {
   const altIdx = document.getElementById('altIdx');
   const altCopy = document.getElementById('altCopy');
 
-const OPENING = [
-    { text: "Azoknak építek, akik \n", em: false },
-    { text: "eredményt", em: true },
-    { text: " akarnak; \nnem csak ", em: false },
-    { text: "látványt", em: true },
-    { text: ".", em: false }
-  ];
-  const OPENING_LEN = OPENING.reduce((a, s) => a + s.text.length, 0);
+  /* ---- NYELVFÜGGŐ ANIMÁCIÓS ADATOK (a cv.html és az index.html eltérő szövegszerkezete miatt) ---- */
+  const OPENING_I18N = {
+    en: [
+      { text: "I build for those who want ", em: false },
+      { text: "results", em: true },
+      { text: " - not just ", em: false },
+      { text: "appearances", em: true },
+      { text: ".", em: false }
+    ],
+    hu: [
+      { text: "Azoknak építek, akik \n", em: false },
+      { text: "eredményt", em: true },
+      { text: " akarnak; \nnem csak ", em: false },
+      { text: "látványt", em: true },
+      { text: ".", em: false }
+    ]
+  };
+  const getOpening = () => OPENING_I18N[I18N.lang] || OPENING_I18N.en;
+  const openingLen = () => getOpening().reduce((a, s) => a + s.text.length, 0);
 
   function renderOpening(chars, cursor) {
     let rem = chars, html = '';
-    for (const s of OPENING) { 
-      if (rem <= 0) break; 
-      const chunk = s.text.slice(0, rem); 
-      rem -= chunk.length; 
-      // \n karakterek cseréje <br> tagekre a biztonságos animációhoz
+    for (const s of getOpening()) {
+      if (rem <= 0) break;
+      const chunk = s.text.slice(0, rem);
+      rem -= chunk.length;
       const escaped = chunk.replace(/\n/g, '<br>');
-      html += s.em ? `<em>${escaped}</em>` : escaped; 
+      html += s.em ? `<em>${escaped}</em>` : escaped;
     }
     if (cursor) html += '<span class="blink-bar"></span>';
     altCopy.innerHTML = html;
   }
 
+  /* ---- HERO STAGE (scroll-pin timeline) ---- */
+  let stageST = null;
+  function stageUpdate(self) {
+    const p = self.progress; const S1=.36, E1=.5, F1=.54, T1=.88;
+    if (p < S1) { altCopy.innerHTML=''; fgSel.style.opacity='0'; fgToast.style.opacity='0'; return; }
+    if (p >= S1 && p < E1) {
+      altCopy.innerHTML=''; altIdx.style.opacity='1';
+      if (fgSel && altIdx) { const r = altIdx.getBoundingClientRect(); if (r.width > 0) { fgSel.style.transform=`translate3d(${r.left-6}px,${r.top-6}px,0)`; fgSel.style.width=`${r.width+12}px`; fgSel.style.height=`${r.height+12}px`; fgSel.style.opacity='1'; } const pct = (p-S1)/(E1-S1); if (pct < .33) { fgToastProp.textContent='color'; fgToastVal.textContent='#E4FE9A'; } else if (pct < .66) { fgToastProp.textContent='alignment'; fgToastVal.textContent='center'; } else { fgToastProp.textContent='margin-bottom'; fgToastVal.textContent='36px'; } const nr = altIdx.getBoundingClientRect(); fgPtr.style.transform=`translate3d(${nr.right+12}px,${nr.top-4}px,0)`; fgPtr.style.opacity='1'; fgToast.style.transform=`translate3d(${nr.right+40}px,${nr.top-36}px,0)`; fgToast.style.opacity='1'; }
+      return;
+    }
+    if (p >= E1 && p < F1) { const fade = 1-Math.min(1,(p-E1)/.02); fgSel.style.opacity=fade; fgToast.style.opacity=fade; fgPtr.style.opacity=fade; return; }
+    if (p >= F1) {
+      const OPENING_LEN = openingLen();
+      const prog = Math.min(1,(p-F1)/(T1-F1)); const chars = Math.round(prog*OPENING_LEN);
+      const typing = (chars < OPENING_LEN) && chars > 0; const done = chars >= OPENING_LEN;
+      renderOpening(chars, typing && !done);
+      if (fgSel && altCopy) {
+        const isTyping = p < T1;
+        if (isTyping && chars > 0) { const r = altCopy.getBoundingClientRect(); if (r.width > 0) { fgSel.style.transform=`translate3d(${r.left-6}px,${r.top-6}px,0)`; fgSel.style.width=`${r.width+12}px`; fgSel.style.height=`${r.height+12}px`; fgSel.style.opacity='1'; fgSelLbl.textContent='p / Statement 01'; } if (fgPtr) { const r2 = altCopy.getBoundingClientRect(); fgPtr.style.transform=`translate3d(${r2.right-60}px,${r2.bottom+16}px,0)`; fgPtr.style.opacity='1'; } if (fgToast && typing) { fgToastProp.textContent='content'; fgToastVal.textContent=I18N.t('editing'); const r3 = altCopy.getBoundingClientRect(); fgToast.style.transform=`translate3d(${Math.min(r3.right-40,window.innerWidth-200)}px,${r3.bottom+12}px,0)`; fgToast.style.opacity='1'; } else { fgToast.style.opacity='0'; } }
+        else { fgSel.style.opacity='0'; fgPtr.style.opacity='0'; fgToast.style.opacity='0'; }
+      }
+    }
+  }
+
   if (!NO_MOTION) {
     gsap.set(altPlane, { scale: .5, rotateX: 45, rotateZ: -10, yPercent: 150, z: -500, opacity: 0, borderRadius: '32px', boxShadow: '0 0 0 1px rgba(255,255,255,0.1)' });
-    const stageTl = gsap.timeline({ scrollTrigger: { trigger: viewport, start: 'top top', end: '+=350%', scrub: 1, pin: true,
-      onUpdate: self => {
-        const p = self.progress; const S1=.36, E1=.5, F1=.54, T1=.88;
-        if (p < S1) { altCopy.innerHTML=''; fgSel.style.opacity='0'; fgToast.style.opacity='0'; return; }
-        if (p >= S1 && p < E1) {
-          altCopy.innerHTML=''; altIdx.style.opacity='1';
-          if (fgSel && altIdx) { const r = altIdx.getBoundingClientRect(); if (r.width > 0) { fgSel.style.transform=`translate3d(${r.left-6}px,${r.top-6}px,0)`; fgSel.style.width=`${r.width+12}px`; fgSel.style.height=`${r.height+12}px`; fgSel.style.opacity='1'; } const pct = (p-S1)/(E1-S1); if (pct < .33) { fgToastProp.textContent='color'; fgToastVal.textContent='#E4FE9A'; } else if (pct < .66) { fgToastProp.textContent='alignment'; fgToastVal.textContent='center'; } else { fgToastProp.textContent='margin-bottom'; fgToastVal.textContent='36px'; } const nr = altIdx.getBoundingClientRect(); fgPtr.style.transform=`translate3d(${nr.right+12}px,${nr.top-4}px,0)`; fgPtr.style.opacity='1'; fgToast.style.transform=`translate3d(${nr.right+40}px,${nr.top-36}px,0)`; fgToast.style.opacity='1'; }
-          return;
-        }
-        if (p >= E1 && p < F1) { const fade = 1-Math.min(1,(p-E1)/.02); fgSel.style.opacity=fade; fgToast.style.opacity=fade; fgPtr.style.opacity=fade; return; }
-        if (p >= F1) {
-          const prog = Math.min(1,(p-F1)/(T1-F1)); const chars = Math.round(prog*OPENING_LEN);
-          const typing = (chars < OPENING_LEN) && chars > 0; const done = chars >= OPENING_LEN;
-          renderOpening(chars, typing && !done);
-          if (fgSel && altCopy) {
-            const isTyping = p < T1;
-            if (isTyping && chars > 0) { const r = altCopy.getBoundingClientRect(); if (r.width > 0) { fgSel.style.transform=`translate3d(${r.left-6}px,${r.top-6}px,0)`; fgSel.style.width=`${r.width+12}px`; fgSel.style.height=`${r.height+12}px`; fgSel.style.opacity='1'; fgSelLbl.textContent='p / Statement 01'; } if (fgPtr) { const r2 = altCopy.getBoundingClientRect(); fgPtr.style.transform=`translate3d(${r2.right-60}px,${r2.bottom+16}px,0)`; fgPtr.style.opacity='1'; } if (fgToast && typing) { fgToastProp.textContent='content'; fgToastVal.textContent='editing...'; const r3 = altCopy.getBoundingClientRect(); fgToast.style.transform=`translate3d(${Math.min(r3.right-40,window.innerWidth-200)}px,${r3.bottom+12}px,0)`; fgToast.style.opacity='1'; } else { fgToast.style.opacity='0'; } }
-            else { fgSel.style.opacity='0'; fgPtr.style.opacity='0'; fgToast.style.opacity='0'; }
-          }
-        }
-      }
-    }});
+    const stageTl = gsap.timeline({ scrollTrigger: { trigger: viewport, start: 'top top', end: '+=350%', scrub: 1, pin: true, onUpdate: stageUpdate }});
+    stageST = stageTl.scrollTrigger;
     stageTl
       .to(mainPlane, { scale:.6, rotateX:45, rotateZ:-10, yPercent:-15, borderRadius:'32px', boxShadow:'0 40px 100px rgba(0,0,0,0.8), 0 0 0 2px rgba(167,139,250,0.6)', duration:1 }, 'ph1')
       .to(altPlane, { yPercent:15, opacity:.5, z:-200, duration:1 }, 'ph1')
@@ -1897,7 +1605,6 @@ const OPENING = [
 
   /* ---- DRAG ---- */
   const DRAGGABLES = [pullFirst, pullLast];
-  const QUIPS = ["Ezt hagyjuk így, jó?","Tesó .. Ne csináld már.","Megint? Előbb javítottam ki.","Lezárom a layer-t... (Csak viccelek)"];
   let quipIdx=0, dragging=null, dragSX=0, dragSY=0, anchorX=0, anchorY=0;
   DRAGGABLES.forEach(el => {
     el.dataset.x='0'; el.dataset.y='0';
@@ -1913,10 +1620,10 @@ const OPENING = [
     if (ox===0&&oy===0) { userSel.style.opacity='0'; return; }
     await pause(800);
     setCollabTarget(el.getBoundingClientRect().left+el.getBoundingClientRect().width/2, el.getBoundingClientRect().top);
-    collabPtr.classList.add('show'); highlightEl(el,'Rácshoz igazítom...');
+    collabPtr.classList.add('show'); highlightEl(el, I18N.t('snap'));
     gsap.to(el, { x:0, y:0, duration:1.2, ease:'power3.inOut', onUpdate() { el.dataset.x=gsap.getProperty(el,'x'); el.dataset.y=gsap.getProperty(el,'y'); const r2=el.getBoundingClientRect(); setCollabTarget(r2.left+r2.width/2,r2.top); } });
     await pause(1300); dragSel.style.opacity='0';
-    const msg=QUIPS[quipIdx]; quipIdx=(quipIdx+1)%QUIPS.length;
+    const msg=I18N.t('quip' + (quipIdx + 1)); quipIdx=(quipIdx+1)%4;
     if (window.innerWidth-collabCX<280) speechBubble.classList.add('flip'); else speechBubble.classList.remove('flip');
     speechBubble.innerHTML='<span class="chat-blink"></span>'; speechBubble.classList.add('show'); sndDone();
     for (let i=0;i<=msg.length;i++) { speechBubble.innerHTML=msg.slice(0,i)+'<span class="chat-blink"></span>'; sndType(); await pause(25+Math.random()*40); }
@@ -1948,11 +1655,11 @@ const OPENING = [
     pullLast.style.webkitTextStrokeColor=''; dragSel.style.opacity='0';
     const subR=heroSub.getBoundingClientRect(); setCollabTarget(subR.left-60,subR.top-40);
     await pause(1000); if (stopped) return;
-    highlightEl(heroSub,'p / Subtitle',false); showPill('content','szerkesztés...');
+    highlightEl(heroSub,'p / Subtitle',false); showPill('content', I18N.t('editing'));
     let txt=heroSub.textContent;
     while (txt.length>0) { txt=txt.slice(0,-1); heroSub.innerHTML=txt+'<span class="ghost-blink"></span>'; highlightEl(heroSub,'p / Subtitle',false); await pause(25); if(stopped)return; }
     await pause(400); if (stopped) return;
-const NEW_TXT='...but oftentimes better\nthan a master of one".';
+    const NEW_TXT='...but oftentimes better\nthan a master of one".';
     for (let i=0;i<=NEW_TXT.length;i++) { heroSub.innerHTML=NEW_TXT.slice(0,i).replace(/\n/g,'<br>')+'<span class="ghost-blink"></span>'; highlightEl(heroSub,'p / Subtitle',false); await pause(30); if(stopped)return; }
     await pause(1000); if (stopped) return;
     dragSel.style.opacity='0'; heroSub.innerHTML=NEW_TXT.replace(/\n/g,'<br>');
@@ -1960,7 +1667,7 @@ const NEW_TXT='...but oftentimes better\nthan a master of one".';
   }
   function pause(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-  /* ---- START (preloader nélkül, automatikusan indul) ---- */
+  /* ---- START ---- */
   function startApp() {
     ScrollTrigger.refresh();
     if (!NO_MOTION) {
@@ -1976,24 +1683,21 @@ const NEW_TXT='...but oftentimes better\nthan a master of one".';
   if (document.readyState === 'complete') startApp();
   else window.addEventListener('load', startApp);
 
-  /* ---- SCROLL PANELS ---- */
-  const PANELS_DATA = [
-    { num:'02', segs:[ 
-        {t:'A precizitás ',em:false},
-        {t:'és a játékosság találkozása',em:false},
-        {t:'; fegyelmezett struktúra, ',em:false},
-        {t:'merész kreatív vízióval',em:true},
-        {t:' feltöltve.',em:false} 
-    ] },
-    { num:'03', segs:[ 
-        {t:"Nem csupán kódot írok.",em:false},
-        {t:'\nÉlményt teremtek.',em:true},
-        {t:'\nÜdvözöllek a világomban.',em:false} 
-    ] }
-  ];
-  PANELS_DATA.forEach(p => { p.len=p.segs.reduce((a,s)=>a+s.t.length,0); });
+  /* ---- SCROLL PANELS (nyelvenként eltérő kiemelés / szövegszerkezet) ---- */
+  const PANELS_I18N = {
+    en: [
+      { segs:[ {t:'The meeting of precision ',em:false},{t:'and playfulness',em:true},{t:' - disciplined structure, charged with bold creative vision.',em:false} ] },
+      { segs:[ {t:"I don't just create design.",em:false},{t:' \n I craft experiences.',em:true},{t:'\nWelcome to my world.',em:false} ] }
+    ],
+    hu: [
+      { segs:[ {t:'A precizitás ',em:false},{t:'és a játékosság találkozása',em:false},{t:'; fegyelmezett struktúra, ',em:false},{t:'merész kreatív vízióval',em:true},{t:' feltöltve.',em:false} ] },
+      { segs:[ {t:'Nem csupán kódot írok.',em:false},{t:'\nÉlményt teremtek.',em:true},{t:'\nÜdvözöllek a világomban.',em:false} ] }
+    ]
+  };
+  Object.keys(PANELS_I18N).forEach(l => PANELS_I18N[l].forEach(p => { p.len = p.segs.reduce((a,s)=>a+s.t.length,0); }));
+  const getPanels = () => PANELS_I18N[I18N.lang] || PANELS_I18N.en;
   const panelChars=[0,0];
-function buildPanelHtml(segs,chars,cursor) { let rem=chars,html=''; for (const s of segs) { if(rem<=0)break; const chunk=s.t.slice(0,rem); rem-=chunk.length; const escaped=chunk.replace(/\n/g,'<br>'); html+=s.em?`<em>${escaped}</em>`:escaped; } if (cursor) html+='<span class="type-blink"></span>'; return html; }
+  function buildPanelHtml(segs,chars,cursor) { let rem=chars,html=''; for (const s of segs) { if(rem<=0)break; const chunk=s.t.slice(0,rem); rem-=chunk.length; const escaped=chunk.replace(/\n/g,'<br>'); html+=s.em?`<em>${escaped}</em>`:escaped; } if (cursor) html+='<span class="type-blink"></span>'; return html; }
   const annSel=document.getElementById('annSel'), annSelLbl=document.getElementById('annSelLbl');
   const annPtr=document.getElementById('annPtr'), annToast=document.getElementById('annToast');
   const annToastProp=document.getElementById('annToastProp'), annToastVal=document.getElementById('annToastVal');
@@ -2002,44 +1706,56 @@ function buildPanelHtml(segs,chars,cursor) { let rem=chars,html=''; for (const s
   const txtEls=[document.getElementById('panelTxt0'),document.getElementById('panelTxt1')];
   let annCX=-200,annCY=-200,annTX=-200,annTY=-200;
   (function annLoop() { annCX+=(annTX-annCX)*.12; annCY+=(annTY-annCY)*.12; annPtr.style.transform=`translate3d(${annCX}px,${annCY}px,0)`; requestAnimationFrame(annLoop); })();
-  (function() {
-    const wrap=document.getElementById('scrollSections'); if (!wrap) return; let lastIdx=-1;
-    window.addEventListener('scroll', () => {
-      const r=wrap.getBoundingClientRect(); const totalH=wrap.offsetHeight-window.innerHeight;
-      if (totalH<=0) return; const progress=Math.max(0,Math.min(1,-r.top/totalH));
-      const N=PANELS_DATA.length; const idx=Math.min(N-1,Math.floor(progress*N)); const sub=progress*N-idx;
-      if (idx!==lastIdx) { panelEls.forEach((p,i)=>p&&(p.style.opacity=i===idx?'1':'0')); panelChars[idx]=0; lastIdx=idx; }
-      const data=PANELS_DATA[idx]; const numEl=numEls[idx], txtEl=txtEls[idx]; if (!txtEl) return;
-      if (numEl) numEl.style.opacity=Math.min(1,sub/.05);
-      const S=.06,E=.82; const t=Math.max(0,Math.min(1,(sub-S)/(E-S))); const chars=Math.round(t*data.len);
-      const isCursor=sub>S&&sub<E&&chars<data.len; const isDone=chars>=data.len;
-      panelChars[idx]=chars; txtEl.innerHTML=buildPanelHtml(data.segs,chars,isCursor&&!isDone);
-      const typing=sub>=S&&sub<.85&&chars>0;
-      if (typing) { const r2=txtEl.getBoundingClientRect(); annSel.style.transform=`translate3d(${r2.left-6}px,${r2.top-6}px,0)`; annSel.style.width=`${r2.width+12}px`; annSel.style.height=`${r2.height+12}px`; annSel.style.opacity='1'; annSelLbl.textContent=`p / Statement 0${idx+2}`; annTX=r2.right-60; annTY=r2.bottom+16; annPtr.style.opacity='1'; if (isCursor) { annToastProp.textContent='content'; annToastVal.textContent='szerkesztés...'; annToast.style.transform=`translate3d(${Math.min(annCX+20,window.innerWidth-200)}px,${annCY-30}px,0)`; annToast.style.opacity='1'; } else { annToast.style.opacity='0'; } }
-      else { annSel.style.opacity='0'; annPtr.style.opacity='0'; annToast.style.opacity='0'; annTX=-200; annTY=-200; }
-    }, {passive:true});
-  })();
+
+  const panelsWrap = document.getElementById('scrollSections');
+  let lastPanelIdx = -1;
+  function panelsUpdate() {
+    if (!panelsWrap) return;
+    const r=panelsWrap.getBoundingClientRect(); const totalH=panelsWrap.offsetHeight-window.innerHeight;
+    if (totalH<=0) return; const progress=Math.max(0,Math.min(1,-r.top/totalH));
+    const PANELS = getPanels();
+    const N=PANELS.length; const idx=Math.min(N-1,Math.floor(progress*N)); const sub=progress*N-idx;
+    if (idx!==lastPanelIdx) { panelEls.forEach((p,i)=>p&&(p.style.opacity=i===idx?'1':'0')); panelChars[idx]=0; lastPanelIdx=idx; }
+    const data=PANELS[idx]; const numEl=numEls[idx], txtEl=txtEls[idx]; if (!txtEl) return;
+    if (numEl) numEl.style.opacity=Math.min(1,sub/.05);
+    const S=.06,E=.82; const t=Math.max(0,Math.min(1,(sub-S)/(E-S))); const chars=Math.round(t*data.len);
+    const isCursor=sub>S&&sub<E&&chars<data.len; const isDone=chars>=data.len;
+    panelChars[idx]=chars; txtEl.innerHTML=buildPanelHtml(data.segs,chars,isCursor&&!isDone);
+    const typing=sub>=S&&sub<.85&&chars>0;
+    if (typing) { const r2=txtEl.getBoundingClientRect(); annSel.style.transform=`translate3d(${r2.left-6}px,${r2.top-6}px,0)`; annSel.style.width=`${r2.width+12}px`; annSel.style.height=`${r2.height+12}px`; annSel.style.opacity='1'; annSelLbl.textContent=`p / Statement 0${idx+2}`; annTX=r2.right-60; annTY=r2.bottom+16; annPtr.style.opacity='1'; if (isCursor) { annToastProp.textContent='content'; annToastVal.textContent=I18N.t('editing'); annToast.style.transform=`translate3d(${Math.min(annCX+20,window.innerWidth-200)}px,${annCY-30}px,0)`; annToast.style.opacity='1'; } else { annToast.style.opacity='0'; } }
+    else { annSel.style.opacity='0'; annPtr.style.opacity='0'; annToast.style.opacity='0'; annTX=-200; annTY=-200; }
+  }
+  window.addEventListener('scroll', panelsUpdate, {passive:true});
+
+  /* nyelvváltáskor a hero- és panel-animáció azonnal az új nyelven rajzolódik újra */
+  I18N.onChange(() => {
+    if (stageST) stageUpdate(stageST);
+    panelsUpdate();
+  });
 
   /* ---- ABOUT SECTION: Bio Card 3D + Timeline ---- */
   (function initAbout() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const vw = window.innerWidth, vh = window.innerHeight;
 
-    /* Show deco */
     const deco = document.getElementById('aboutDeco');
     if (deco) {
       const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { deco.classList.add('vis'); obs.unobserve(deco); } }); }, { threshold: 0.1 });
       obs.observe(deco);
     }
 
-    /* Bio words 3D */
+    /* Bio words 3D — nyelvváltáskor újraépül a szótárból */
     const bioWords = [];
-    document.querySelectorAll('[data-scroll-text]').forEach(p => {
-      const raw = p.textContent.trim().split(/\s+/); p.innerHTML = '';
-      raw.forEach((w, wi) => { const span = document.createElement('span'); span.textContent = w; span.style.cssText = 'display:inline-block;will-change:transform,opacity;margin-right:0.3em;backface-visibility:hidden;'; p.appendChild(span); bioWords.push({ el:span, z0:-80-Math.random()*60, rx0:25+Math.random()*20, z:-80, rx:25, op:0.08, delay:wi*8 }); });
-    });
+    function buildBioWords() {
+      bioWords.length = 0;
+      document.querySelectorAll('[data-scroll-text]').forEach(p => {
+        const txt = (p.getAttribute('data-i18n') ? I18N.t(p.getAttribute('data-i18n')) : p.textContent) || p.textContent;
+        const raw = txt.trim().split(/\s+/); p.innerHTML = '';
+        raw.forEach((w, wi) => { const span = document.createElement('span'); span.textContent = w; span.style.cssText = 'display:inline-block;will-change:transform,opacity;margin-right:0.3em;backface-visibility:hidden;'; p.appendChild(span); bioWords.push({ el:span, z0:-80-Math.random()*60, rx0:25+Math.random()*20, z:-80, rx:25, op:0.08, delay:wi*8 }); });
+      });
+    }
+    buildBioWords();
+    I18N.onChange(buildBioWords);
 
-    /* Bio card tilt + holo */
     const bioCard = document.getElementById('bioCard');
     let bioCanvas, bioCtx;
     const LW = 200, LH = 150;
@@ -2069,20 +1785,16 @@ function buildPanelHtml(segs,chars,cursor) { let rem=chars,html=''; for (const s
       window.__renderHoloLight(bioCtx, LW, LH, ry, rx);
     }
 
-    /* Contact card holo */
     const contactLightCtx = (() => {
-  const c = document.getElementById('contactLightCanvas');
-  return c ? c.getContext('2d') : null;
-})();
+      const c = document.getElementById('contactLightCanvas');
+      return c ? c.getContext('2d') : null;
+    })();
+    const contactCard = document.getElementById('contactCard');
+    function renderContactLight() {
+      if (!contactLightCtx) return;
+      window.__renderHoloLight(contactLightCtx, 200, 150, 0, 0);
+    }
 
-const contactCard = document.getElementById('contactCard');
-
-function renderContactLight() {
-  if (!contactLightCtx) return;
-  window.__renderHoloLight(contactLightCtx, 200, 150, 0, 0);
-}
-
-    /* Timeline line fill */
     const expSection = document.getElementById('aboutExp');
     const expLineFill = document.getElementById('expLineFill');
     const expItems = document.querySelectorAll('#aboutExp .about-exp__item');
@@ -2104,13 +1816,11 @@ function renderContactLight() {
       }
     });
 
-    /* Intersection for visibility */
     const visObs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); } });
     }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
     expItems.forEach(item => visObs.observe(item));
 
-    /* Contact heading / card visibility */
     const contactHeading = document.getElementById('contactHeading');
     const contactCardEl = document.getElementById('contactCard');
     const contactDecoEl = document.getElementById('contactDeco');
@@ -2127,7 +1837,6 @@ function renderContactLight() {
     if (contactCardEl) contactVisObs.observe(contactCardEl);
     if (contactDecoEl) contactVisObs.observe(contactDecoEl);
 
-    /* Bio card visibility */
     if (bioCard) {
       const bioObs = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) bioCard.classList.add('is-visible'); });
@@ -2135,12 +1844,10 @@ function renderContactLight() {
       bioObs.observe(bioCard);
     }
 
-    /* Scroll hint stop */
     let scrollHintStopped = false;
     const hint = document.getElementById('aboutScrollHint');
     window.addEventListener('scroll', () => { if (!scrollHintStopped && hint) { scrollHintStopped=true; hint.style.animation='none'; } }, { passive: true, once: true });
 
-    /* TICK */
     const elapsed0 = performance.now();
     let smoothY = window.scrollY, prevSY = smoothY, velocity = 0;
     function tick(now) {
@@ -2148,7 +1855,6 @@ function renderContactLight() {
       prevSY = smoothY; smoothY += (window.scrollY - smoothY)*0.1;
       velocity += (smoothY - prevSY - velocity)*0.12;
 
-      /* bio words */
       bioWords.forEach(w => {
         const rect = w.el.getBoundingClientRect(); const progress = 1-Math.max(0,Math.min(1,(rect.top-window.innerHeight*0.7)/(window.innerHeight*0.2)));
         const t = Math.max(0,Math.min(1,progress)); const e = 1-Math.pow(1-t,3);
@@ -2157,7 +1863,6 @@ function renderContactLight() {
         w.el.style.transform = `perspective(600px) translateZ(${w.z.toFixed(0)}px) rotateX(${w.rx.toFixed(1)}deg)`;
       });
 
-      /* bio card tilt */
       if (bioCard && bioCard.classList.contains('is-visible') && !IS_TOUCH) {
         if (!hovering && !cardDragActive) {
           const ti = elapsed*0.001;
@@ -2171,20 +1876,17 @@ function renderContactLight() {
         renderBioLight(bioTilt.ry, bioTilt.rx);
       }
 
-      /* contact card tilt */
       if (contactCard && contactCard.classList.contains('is-visible')) {
-  contactCard.style.transform = 'none';
-  renderContactLight();
-}
+        contactCard.style.transform = 'none';
+        renderContactLight();
+      }
 
-      /* timeline line */
       if (expSection && expLineFill) {
         const sRect = expSection.getBoundingClientRect();
         const start = sRect.top - window.innerHeight*0.5, end = sRect.bottom - window.innerHeight, total = end-start;
         if (total > 0) { const pct = Math.max(0,Math.min(100,(-start/total)*100)); expLineFill.style.height = pct+'%'; }
       }
 
-      /* exp card years parallax */
       expItems.forEach(item => {
         if (!item.classList.contains('is-visible')) return;
         const year = item.querySelector('.about-exp__year');
@@ -2196,7 +1898,6 @@ function renderContactLight() {
         year.style.transform = `scale(${(1+prox*0.08).toFixed(3)}) translateY(${(velocity*0.3).toFixed(1)}px)`;
       });
 
-      /* exp card drag spring */
       expCards.forEach(s => {
         if (s.released) {
           const fx = -s.springK*s.dragX; s.dragVX = (s.dragVX+fx)*s.dragDamping; s.dragX += s.dragVX;
@@ -2221,11 +1922,11 @@ function renderContactLight() {
     const btn = document.getElementById('emailCopyBtn'); const lbl = document.getElementById('emailBtnTxt'); const arrow = document.getElementById('emailArrow');
     if (!btn) return;
     btn.addEventListener('click', () => {
-      navigator.clipboard.writeText('hello@bellerzoltanezra.hu').then(() => {
-        lbl.textContent = 'Kimásolva!'; btn.style.borderColor='rgba(228,254,154,.5)'; btn.style.color='#E4FE9A';
+      navigator.clipboard.writeText(MAIL).then(() => {
+        lbl.textContent = I18N.t('copied'); btn.style.borderColor='rgba(228,254,154,.5)'; btn.style.color='#E4FE9A';
         if (arrow) arrow.textContent = '✓';
-        setTimeout(() => { lbl.textContent='hello@bellerzoltanezra.hu'; btn.style.borderColor=''; btn.style.color=''; if (arrow) arrow.textContent='Másolás ↗'; }, 2000);
-      }).catch(() => { lbl.textContent='hello@bellerzoltanezra.hu'; setTimeout(()=>{ lbl.textContent='hello@bellerzoltanezra.hu'; },3000); });
+        setTimeout(() => { lbl.textContent=MAIL; btn.style.borderColor=''; btn.style.color=''; if (arrow) arrow.textContent='↗'; }, 2000);
+      }).catch(() => { lbl.textContent=MAIL; setTimeout(()=>{ lbl.textContent=MAIL; },3000); });
     });
   })();
 
@@ -2234,16 +1935,19 @@ function renderContactLight() {
 </script>
 
 <script>
-/* ---- SPLIDE ---- */
+/* ---- SPLIDE (nyelvváltáskor frissül a szélesség) ---- */
 document.addEventListener('DOMContentLoaded', function() {
   const embedSec = document.getElementById('embed-section');
   if (!embedSec) return;
+  const instances = [];
   embedSec.querySelectorAll('.splide').forEach(function(el) {
     let speed=el.hasAttribute('data-speed')?parseFloat(el.getAttribute('data-speed')):0.4;
     let gapDefault=el.getAttribute('data-gap-default')||'4rem';
     let gap991=el.getAttribute('data-gap-991')||'3rem';
-    new Splide(el,{ autoWidth:true,arrows:false,pagination:false,focus:'center',direction:'ltr',gap:gapDefault,type:'loop', autoScroll:{autoStart:true,speed:speed,pauseOnHover:false}, breakpoints:{991:{gap:gap991}}, intersection:{inView:{autoScroll:true},outView:{autoScroll:false}} }).mount(window.splide.Extensions);
+    const s = new Splide(el,{ autoWidth:true,arrows:false,pagination:false,focus:'center',direction:'ltr',gap:gapDefault,type:'loop', autoScroll:{autoStart:true,speed:speed,pauseOnHover:false}, breakpoints:{991:{gap:gap991}}, intersection:{inView:{autoScroll:true},outView:{autoScroll:false}} }).mount(window.splide.Extensions);
+    instances.push(s);
   });
+  I18N.onChange(function() { instances.forEach(function(s) { try { s.refresh(); } catch (e) {} }); });
 });
 </script>
 
@@ -2298,28 +2002,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
-  gsap.registerPlugin(ScrollTrigger); 
-  const embedSec=document.getElementById('embed-section'); 
+  gsap.registerPlugin(ScrollTrigger);
+  const embedSec=document.getElementById('embed-section');
   if(!embedSec)return;
-
-  // Megkeressük az összes .work-wrapper-t (az Opció 1-et és az Opció 2-t is)
   const workWraps = embedSec.querySelectorAll('.work-wrapper');
-  
   workWraps.forEach(workWrap => {
-    const bgWrap = workWrap.querySelector('.work-bg-wrap'); 
-    if(!bgWrap) return; // Ha valamiért nincs benne a háttér, ugrunk
-    
-    // Rátesszük a ScrollTrigger animációt az aktuális tabra
+    const bgWrap = workWrap.querySelector('.work-bg-wrap');
+    if(!bgWrap) return;
     gsap.fromTo(bgWrap, {opacity:0}, {
-      opacity:1, 
-      duration:0.4, 
-      ease:'none', 
-      scrollTrigger: {
-        trigger: workWrap, 
-        start: 'top top', 
-        end: 'bottom bottom', 
-        toggleActions: 'play reverse play reverse'
-      }
+      opacity:1, duration:0.4, ease:'none',
+      scrollTrigger: { trigger: workWrap, start: 'top top', end: 'bottom bottom', toggleActions: 'play reverse play reverse' }
     });
   });
 });
@@ -2351,18 +2043,50 @@ gsap.registerPlugin(ScrollToPlugin);
 </script>
 
 <script>
+/* ---- SERVICE HEADINGS: karakterenkénti scrub animáció (nyelvváltáskor újraépül az új szöveggel) ---- */
 document.addEventListener('DOMContentLoaded',function(){
   gsap.registerPlugin(ScrollTrigger); const embedSec=document.getElementById('embed-section'); if(!embedSec)return;
-  function splitChars(el){const txt=el.innerText;el.innerHTML=txt.split('').map(ch=>`<span class="char">${ch===' '?'&nbsp;':ch}</span>`).join('');}
-  embedSec.querySelectorAll('.services-headline-wrap').forEach(wrap=>{const h=wrap.querySelector('.services-big-heading,.our-work-heading');if(!h)return;splitChars(h);const chars=h.querySelectorAll('.char');gsap.set(chars,{opacity:0,filter:'blur(10px)',x:-10});const shuffled=gsap.utils.shuffle([...chars]);const mob=window.matchMedia('(max-width: 767px)').matches;const tl=gsap.timeline({scrollTrigger:{trigger:wrap,start:mob?'top 90%':'top 85%',end:mob?'top 60%':'top 40%',scrub:true,toggleActions:'play reverse play reverse',invalidateOnRefresh:true}});tl.to(shuffled,{opacity:1,filter:'blur(0px)',x:0,ease:'power2.out',stagger:{each:0.05,from:'start'},duration:1.5});});
+  const wraps=[...embedSec.querySelectorAll('.services-headline-wrap')];
+  function build(){
+    wraps.forEach(wrap=>{
+      const h=wrap.querySelector('.services-big-heading,.our-work-heading'); if(!h)return;
+      if(h.__tl){ if(h.__tl.scrollTrigger) h.__tl.scrollTrigger.kill(); h.__tl.kill(); h.__tl=null; }
+      const key=h.getAttribute('data-i18n');
+      const txt=(key?I18N.t(key):'')||h.textContent;
+      h.innerHTML=[...txt].map(ch=>`<span class="char">${ch===' '?'&nbsp;':ch}</span>`).join('');
+      const chars=h.querySelectorAll('.char');
+      gsap.set(chars,{opacity:0,filter:'blur(10px)',x:-10});
+      const shuffled=gsap.utils.shuffle([...chars]);
+      const mob=window.matchMedia('(max-width: 767px)').matches;
+      const tl=gsap.timeline({scrollTrigger:{trigger:wrap,start:mob?'top 90%':'top 85%',end:mob?'top 60%':'top 40%',scrub:true,toggleActions:'play reverse play reverse',invalidateOnRefresh:true}});
+      tl.to(shuffled,{opacity:1,filter:'blur(0px)',x:0,ease:'power2.out',stagger:{each:0.05,from:'start'},duration:1.5});
+      h.__tl=tl;
+    });
+  }
+  build();
+  I18N.onChange(function(){ build(); ScrollTrigger.refresh(); });
 });
 </script>
 
 <script>
+/* ---- SERVICE TEXT: SplitText sor-animáció (nyelvváltáskor újra felbontja az új szöveget) ---- */
 document.addEventListener('DOMContentLoaded',function(){
   const embedSec=document.getElementById('embed-section'); if(!embedSec||typeof SplitText==='undefined')return;
   gsap.registerPlugin(SplitText,ScrollTrigger);
-  embedSec.querySelectorAll('[ts-text-lines-up-once]').forEach(el=>{if(el.splitInstance)el.splitInstance.revert();const sp=new SplitText(el,{type:'lines'});el.splitInstance=sp;const lines=sp.lines;gsap.set(lines,{opacity:0,y:'100%',scaleY:0.98,filter:'blur(20px)'});ScrollTrigger.create({trigger:el,start:'top 85%',onEnter:()=>gsap.to(lines,{y:0,opacity:1,filter:'blur(0px)',scaleY:1,ease:'power4.out',stagger:0.05,duration:1}),once:true});});
+  const els=[...embedSec.querySelectorAll('[ts-text-lines-up-once]')];
+  function build(fresh){
+    els.forEach(el=>{
+      if(el.__st){ el.__st.kill(); el.__st=null; }
+      if(!fresh){ el.splitInstance=null; /* a szöveget az i18n már lecserélte, a régi split elavult */ }
+      if(el.__entered) return;
+      if(fresh && el.splitInstance){ el.splitInstance.revert(); }
+      const sp=new SplitText(el,{type:'lines'}); el.splitInstance=sp; const lines=sp.lines;
+      gsap.set(lines,{opacity:0,y:'100%',scaleY:0.98,filter:'blur(20px)'});
+      el.__st=ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:()=>{el.__entered=true;gsap.to(lines,{y:0,opacity:1,filter:'blur(0px)',scaleY:1,ease:'power4.out',stagger:0.05,duration:1});}});
+    });
+  }
+  build(true);
+  I18N.onChange(function(){ build(false); ScrollTrigger.refresh(); });
 });
 </script>
 
@@ -2414,28 +2138,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script>
 CustomEase && CustomEase.create("custom","M0,0 C0.29,0 0.428,0.015 0.5,0.1 0.569,0.183 0.613,0.337 0.613,0.481 0.613,0.578 0.637,0.806 0.7,0.9 0.775,1.011 1,0.945 1,1 ");
-</script>
-
-<script>
-  function switchWorkTab(tabId) {
-    // 1. Gombok "active" classának frissítése
-    document.getElementById('btn-opt-1').classList.toggle('active', tabId === 1);
-    document.getElementById('btn-opt-2').classList.toggle('active', tabId === 2);
-
-    // 2. Tartalmi konténerek megjelenítése/elrejtése
-    document.getElementById('work-opt-1').classList.toggle('active', tabId === 1);
-    document.getElementById('work-opt-2').classList.toggle('active', tabId === 2);
-
-    // 3. Nagyon fontos: GSAP ScrollTrigger frissítése!
-    // Mivel a DOM magassága és láthatósága változik, szólnunk kell a GSAP-nek, 
-    // hogy számolja újra az elemek magasságát és a görgetési pontokat.
-    if (typeof ScrollTrigger !== 'undefined') {
-      // Egy pici késleltetés kell, hogy a böngésző biztosan újra-renderelje a display block/none-t
-      setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 50);
-    }
-  }
 </script>
 
 </body>
